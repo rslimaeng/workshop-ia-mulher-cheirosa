@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de Prompts MC — Workshop IA · MC & Fígaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 20px 0 24px;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      background: transparent;
+      color: var(--ink-soft);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .filter-btn:hover { background: var(--bg-warm); }
+    .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .banco-contador {
+      font-size: 13px;
+      color: var(--ink-muted);
+      padding: 0 0 12px;
+    }
+
+    .prompts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .prompt-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 22px;
+    }
+    .prompt-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .prompt-card-title {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .prompt-card-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: var(--bg-warm);
+      color: var(--accent-dark);
+      border: 1px solid var(--border-strong);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+    .prompt-card-desc {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+    .prompt-body {
+      background: var(--bg-warm);
+      padding: 14px 16px;
+      border-radius: 6px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--ink);
+      white-space: pre-wrap;
+      line-height: 1.6;
+      border-left: 3px solid var(--accent-warm);
+      margin-bottom: 10px;
+    }
+    .copy-btn {
+      padding: 6px 14px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .copy-btn:hover { background: var(--accent-dark); }
+    .copy-btn.copied { background: #2e7d32; }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../index.html" class="topbar-logo">Workshop IA · MC & Fígaro</a>
+      <nav class="topbar-nav">
+        <a href="../index.html">Início</a>
+        <a href="../artefatos/index.html">Artefatos</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="module-header site-container">
+    <p class="eyebrow">Referência</p>
+    <h1>Banco de Prompts MC</h1>
+    <div class="module-header-meta">
+      <span>12 prompts PCTFL</span>
+      <span>·</span>
+      <span>Filtrados por função</span>
+      <span>·</span>
+      <span>Contexto real da Mulher Cheirosa</span>
+    </div>
+  </div>
+
+  <div class="site-container">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="gestao">💼 Gestão</button>
+      <button class="filter-btn" data-filter="marketing">📢 Marketing</button>
+      <button class="filter-btn" data-filter="atendimento">📞 Atendimento</button>
+      <button class="filter-btn" data-filter="compras">🛒 Compras</button>
+    </div>
+
+    <div class="prompts-list">
+
+      <!-- GESTÃO -->
+
+      <div class="prompt-card" data-function="gestao">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">1 · Analisar Recorte de Planilha de Vendas</div>
+            <p class="prompt-card-desc">Extrair insights de desempenho de uma unidade em minutos.</p>
+          </div>
+          <span class="prompt-card-tag">Gestão</span>
+        </div>
+        <div class="prompt-body" id="p1">Papel: Você é um analista de dados especializado em relatórios de vendas para o setor de beleza e estética premium.
+
+Contexto: Sou [função] da Mulher Cheirosa, clínica de beleza premium em Fortaleza e Recife com 3 unidades: Maison Aldeota (FOR), RioMar Papicu (FOR) e RioMar Recife (PE). Preciso entender o desempenho de vendas de [período: ex. junho/2026] por unidade e por categoria de serviço.
+
+Tarefa: Analise os dados abaixo e me responda:
+1. Qual unidade teve o melhor e o pior desempenho e por quê os números indicam isso
+2. Quais categorias de serviço estão crescendo e quais estão caindo
+3. 3 hipóteses possíveis para o comportamento observado
+4. 2 perguntas que eu deveria investigar antes de tomar decisão
+
+Dados:
+[cole os dados da planilha aqui]
+
+Formato:
+- Início: 1 parágrafo de resumo executivo (3 linhas)
+- Tabela: unidade × principais métricas × observação
+- Hipóteses em bullets numerados
+- Perguntas em bullets numerados
+
+Limitações: Não invente números que não estão nos dados. Se algo estiver ambíguo, aponte. Se faltar dado essencial para conclusão, sinalize antes de concluir.</div>
+        <button class="copy-btn" data-copy="p1">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="gestao">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">2 · Cruzar Dados de Clientes vs Serviços</div>
+            <p class="prompt-card-desc">Identificar oportunidades de venda cruzada por perfil.</p>
+          </div>
+          <span class="prompt-card-tag">Gestão</span>
+        </div>
+        <div class="prompt-body" id="p2">Papel: Você é um analista de CRM especializado em clínicas de beleza premium.
+
+Contexto: Trabalho na Mulher Cheirosa. Tenho uma base de clientes que fizeram [serviço A: ex. Banho de Lua] no último trimestre e queria entender oportunidades de venda cruzada com [serviço B: ex. Spa da Noiva, Micropigmentação, Cronograma Capilar].
+
+Tarefa: Com base nos dados abaixo, me diga:
+1. Qual o perfil das clientes que compraram apenas o serviço A (idade, frequência, ticket médio)
+2. Quais características apontam propensão a comprar o serviço B
+3. Sugira 3 mensagens de contato personalizadas para diferentes perfis identificados
+4. Qual segmento tem melhor custo/benefício para começar a campanha
+
+Dados dos clientes:
+[cole recorte simples: nome, idade, serviço, data, valor]
+
+Formato:
+- Perfil resumido em bullets
+- Tabela: perfil × propensão × justificativa
+- 3 mensagens completas
+- Recomendação final em 2 linhas
+
+Limitações: Trabalhe apenas com os dados fornecidos. Se sugerir mensagem, use tom da MC: sofisticado, acolhedor e feminino.</div>
+        <button class="copy-btn" data-copy="p2">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="gestao">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">3 · Gerar Relatório Executivo Mensal</div>
+            <p class="prompt-card-desc">Transformar dados brutos em 1 página para diretoria.</p>
+          </div>
+          <span class="prompt-card-tag">Gestão</span>
+        </div>
+        <div class="prompt-body" id="p3">Papel: Você é um analista de gestão que escreve relatórios executivos para diretoria de PMEs premium de serviços.
+
+Contexto: Sou [função] da Mulher Cheirosa. Preciso apresentar o resultado de [período] para [Lilianne Veloso / Camilla Silveira / diretoria] em uma reunião rápida amanhã. Vou apresentar em 5 minutos.
+
+Tarefa: Com base nos dados brutos abaixo, estruture um relatório executivo de 1 página. Foque no que a diretoria precisa saber para decidir, não em detalhe operacional.
+
+Dados brutos:
+[cole números, situações, problemas]
+
+Formato:
+- Título e período
+- Resumo executivo (3 linhas: o que aconteceu, resultado, o que está em risco)
+- Tabela das 3-5 métricas principais com variação vs mês anterior
+- Pontos de atenção (máximo 3)
+- Recomendação ou próximos passos
+
+Tom: direto, sem rodeios. Quem lê tem 5 minutos.
+
+Limitações: Use apenas os dados que forneci. Se faltar dado essencial para relatório ficar completo, avise. Não invente comparações históricas.</div>
+        <button class="copy-btn" data-copy="p3">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="gestao">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">4 · Comparar Desempenho entre Unidades</div>
+            <p class="prompt-card-desc">Ranking Maison × RioMar FOR × RioMar Recife com hipóteses.</p>
+          </div>
+          <span class="prompt-card-tag">Gestão</span>
+        </div>
+        <div class="prompt-body" id="p4">Papel: Você é um consultor de operações de rede de serviços premium.
+
+Contexto: Trabalho na Mulher Cheirosa. Temos 3 unidades: Maison Aldeota (FOR, tradicional/street), RioMar Papicu (FOR, shopping) e RioMar Recife (PE, shopping). Cada uma tem perfil de cliente e mix de serviços diferentes.
+
+Tarefa: Com base nos dados abaixo:
+1. Compare as 3 unidades em ticket médio, mix de serviços e frequência de retorno
+2. Identifique qual unidade está performando melhor em cada dimensão
+3. Sugira 1 hipótese sobre o porquê da diferença
+4. Recomende 2 ações específicas para a unidade de pior desempenho
+
+Dados:
+[cole tabela com 3 unidades e seus indicadores]
+
+Formato:
+- Tabela comparativa das 3 unidades
+- Ranking por dimensão (ticket, mix, retorno)
+- Hipótese em 1 parágrafo
+- Ações recomendadas com responsável sugerido e prazo
+
+Limitações: Considere o contexto: Maison é ponto tradicional/rua desde 1987, RioMar são operações em shopping (fluxo maior de passagem). Não compare como se fossem operações idênticas.</div>
+        <button class="copy-btn" data-copy="p4">Copiar prompt</button>
+      </div>
+
+      <!-- MARKETING -->
+
+      <div class="prompt-card" data-function="marketing">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">5 · Gerar Legendas de Instagram para Banho de Lua</div>
+            <p class="prompt-card-desc">5 legendas com ângulos diferentes, tom MC.</p>
+          </div>
+          <span class="prompt-card-tag">Marketing</span>
+        </div>
+        <div class="prompt-body" id="p5">Papel: Você é um copywriter especializado em beleza premium feminina.
+
+Contexto: Instagram da @mulhercheirosaoficial. Vou postar sobre o Banho de Lua, serviço mais icônico da MC desde 1987. Público: mulheres 25-55 anos, classes A/B, Fortaleza e Recife. Tom da marca: sofisticado, acolhedor, feminino, sem gírias.
+
+Tarefa: Crie 5 legendas para post de Instagram promovendo o Banho de Lua. Cada legenda deve:
+- Ter entre 80 e 150 palavras
+- Ter ângulo diferente (nostalgia da tradição, resultado imediato, autocuidado, ritual de bem-estar, dica prática)
+- Terminar com CTA para agendamento via WhatsApp ou link na bio
+- Usar no máximo 3 emojis (elegantes: ✨🌙💕)
+
+Formato:
+- Numere 1 a 5
+- Cada legenda entre aspas para facilitar copiar
+- Depois de cada legenda, 1 linha indicando o ângulo usado
+
+Limitações: Não prometa resultado médico ou clínico. Não fale de preço. Não use "salão" — usar "clínica de beleza". Não use jargão de rede popular.</div>
+        <button class="copy-btn" data-copy="p5">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="marketing">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">6 · Criar Pauta Editorial Mensal</div>
+            <p class="prompt-card-desc">20 posts do mês (10 reels + 6 carrosséis + 4 estáticos).</p>
+          </div>
+          <span class="prompt-card-tag">Marketing</span>
+        </div>
+        <div class="prompt-body" id="p6">Papel: Você é um planejador editorial para redes sociais de marca premium de beleza.
+
+Contexto: Instagram da @mulhercheirosaoficial. Preciso planejar o conteúdo de [mês: ex. julho/2026]. Contexto do mês: São João, férias escolares, temporada de eventos sociais em Fortaleza. Grupo tem 3 unidades e serviços em: cabelo, maquiagem, unhas, depilação, estética facial e spa/noivas.
+
+Tarefa: Crie um calendário editorial de 20 posts para o mês, com:
+- 10 reels
+- 6 carrosséis
+- 4 posts estáticos
+
+Distribua entre serviços de forma equilibrada e considere:
+- 3 posts com foco em Banho de Lua (serviço icônico)
+- 2 posts sobre noivas (segmento premium)
+- 2 posts sazonais (São João / festas)
+- 1 post por unidade (Maison, RioMar FOR, RioMar Recife)
+- Restante distribuído entre cabelo, unhas, maquiagem, estética
+
+Formato: Tabela com colunas:
+| Semana | Formato | Serviço/Tema | Gancho | CTA |
+
+Limitações: Não invente serviços que não estão no portfólio. Distribua os posts em 4 semanas. Não use mesmo gancho em posts próximos.</div>
+        <button class="copy-btn" data-copy="p6">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="marketing">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">7 · Adaptar Copy para 3 Formatos</div>
+            <p class="prompt-card-desc">Uma mensagem em post carrossel + stories + WhatsApp.</p>
+          </div>
+          <span class="prompt-card-tag">Marketing</span>
+        </div>
+        <div class="prompt-body" id="p7">Papel: Você é um adaptador de copy multi-canal para marcas premium.
+
+Contexto: Estou lançando [campanha: ex. Pacote Noiva Premium 2026]. Público: noivas dos próximos 3 meses. Já tenho a mensagem-mãe abaixo. Preciso adaptar para 3 canais.
+
+Mensagem-mãe:
+[cole seu texto original]
+
+Tarefa: Adapte a mensagem para 3 formatos, mantendo essência mas ajustando extensão, tom e CTA para cada canal:
+
+1. Post carrossel Instagram (5 slides): abertura, 3 slides de benefício, CTA
+2. Stories sequenciais (4 stories): abertura, 2 de conteúdo, CTA + link
+3. WhatsApp broadcast (1 mensagem): direto, no máximo 90 palavras, com CTA claro para agendamento
+
+Formato:
+- Título "Post carrossel" + cada slide entre aspas
+- Título "Stories" + cada tela entre aspas
+- Título "WhatsApp" + mensagem completa entre aspas
+
+Limitações: Tom Mulher Cheirosa (sofisticado, feminino, acolhedor). Nada de gírias. Emojis moderados. Não invente benefícios que não estão na mensagem-mãe.</div>
+        <button class="copy-btn" data-copy="p7">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="marketing">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">8 · Sugerir Hashtags Segmentadas</div>
+            <p class="prompt-card-desc">3 níveis: nicho específico + médio + local + próprias.</p>
+          </div>
+          <span class="prompt-card-tag">Marketing</span>
+        </div>
+        <div class="prompt-body" id="p8">Papel: Você é um estrategista de crescimento orgânico no Instagram para marcas de beleza premium no Brasil.
+
+Contexto: Instagram @mulhercheirosaoficial, 182 mil seguidores. Vou postar sobre [tema: ex. Banho de Lua, Noivas, Cronograma Capilar, Cortes]. Localização: Fortaleza e Recife.
+
+Tarefa: Sugira 3 grupos de hashtags:
+1. Nicho super-específico (baixo volume, alta afinidade) — 5 hashtags
+2. Nicho médio (volume médio, público qualificado) — 8 hashtags
+3. Localização + generalistas relevantes — 5 hashtags
+
+Priorize hashtags que:
+- Sejam usadas por perfil brasileiro do setor de beleza
+- Combinem com público classe A/B mulher adulta
+- Não sejam "queimadas" ou spammy
+
+Formato:
+- Título de cada grupo
+- Hashtags em uma linha, separadas por espaço, sem vírgula
+- No final, 3 hashtags proprietárias da MC (ex: #McVantagens, #MulherCheirosa, #BanhoDeLuaMC)
+
+Limitações: Não use hashtags em inglês genéricas (#beauty, #style). Máximo 18 hashtags por post.</div>
+        <button class="copy-btn" data-copy="p8">Copiar prompt</button>
+      </div>
+
+      <!-- ATENDIMENTO -->
+
+      <div class="prompt-card" data-function="atendimento">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">9 · Redigir WhatsApp de Confirmação de Agendamento</div>
+            <p class="prompt-card-desc">Mensagem padrão com tom MC, personalizada por serviço.</p>
+          </div>
+          <span class="prompt-card-tag">Atendimento</span>
+        </div>
+        <div class="prompt-body" id="p9">Papel: Você é uma redatora de comunicação com cliente para clínica de beleza premium.
+
+Contexto: Sou recepcionista da Mulher Cheirosa. Precisa enviar mensagem de WhatsApp para confirmar agendamento da cliente [nome] para fazer [serviço] no dia [data] às [horário] na unidade [Maison / RioMar FOR / RioMar Recife].
+
+Tarefa: Redija a mensagem de confirmação incluindo:
+- Saudação personalizada com nome
+- Confirmação dos detalhes (serviço, data, horário, unidade + endereço)
+- 1 recomendação de preparação (ex: chegar 10min antes, se aplicável ao serviço)
+- Instrução clara caso precise remarcar
+- Fechamento acolhedor
+
+Formato: Mensagem única, entre 80 e 130 palavras, com quebras de linha para leitura fácil no celular.
+
+Limitações: Tom MC (sofisticado, acolhedor, feminino). Não usar "querida" ou "amor" — usar o nome. Usar no máximo 2 emojis. Sempre indicar a unidade específica.</div>
+        <button class="copy-btn" data-copy="p9">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="atendimento">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">10 · Responder Avaliação Negativa com Elegância</div>
+            <p class="prompt-card-desc">Preservar reputação premium, oferecer solução privada.</p>
+          </div>
+          <span class="prompt-card-tag">Atendimento</span>
+        </div>
+        <div class="prompt-body" id="p10">Papel: Você é um especialista em gestão de reputação online para marcas premium de serviço.
+
+Contexto: A Mulher Cheirosa recebeu uma avaliação negativa no [Google / Reclame Aqui / Instagram] sobre [assunto]. A cliente está irritada. Precisamos responder publicamente de forma que:
+1. Reconheça a experiência da cliente
+2. Preserve a reputação da marca premium
+3. Ofereça caminho de solução privado
+
+Avaliação recebida:
+[cole a avaliação da cliente aqui, na íntegra]
+
+Tarefa: Redija a resposta pública. Ela deve:
+- Começar chamando a cliente pelo nome (se disponível)
+- Reconhecer o desconforto sem admitir culpa jurídica
+- Explicar brevemente o que a MC valoriza (sem parecer defensivo)
+- Convidar para conversa privada (WhatsApp ou e-mail)
+- Fechar com tom acolhedor
+
+Formato: Texto único, máximo 120 palavras.
+
+Limitações: Não prometer devolução ou compensação sem antes ouvir a cliente em privado. Não usar frases genéricas como "sua opinião é importante". Não ser defensivo. Não citar o nome de profissional específico. Tom sofisticado sempre.</div>
+        <button class="copy-btn" data-copy="p10">Copiar prompt</button>
+      </div>
+
+      <!-- COMPRAS -->
+
+      <div class="prompt-card" data-function="compras">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">11 · Analisar Proposta de Fornecedor</div>
+            <p class="prompt-card-desc">5 blocos: claros, faltando, atenção, perguntas, comparação.</p>
+          </div>
+          <span class="prompt-card-tag">Compras</span>
+        </div>
+        <div class="prompt-body" id="p11">Papel: Você é um analista de compras experiente em setor de beleza e estética com foco em produtos premium.
+
+Contexto: Trabalho na Mulher Cheirosa. Recebi uma proposta de [fornecedor, ex: distribuidor L'Oréal, importadora de cosméticos, fornecedor de mobiliário] para [finalidade]. Valor total: R$ [valor]. Antes de aprovar, preciso analisar.
+
+Proposta recebida:
+[cole o texto da proposta, e-mail ou PDF convertido em texto]
+
+Tarefa: Analise a proposta e me diga:
+1. Quais itens estão claramente descritos e quais estão vagos
+2. O que está faltando e deveria estar em uma proposta profissional
+3. Quais cláusulas ou condições merecem atenção especial
+4. 3 perguntas que devo fazer ao fornecedor antes de fechar
+5. 1 comparação sugerida: qual outro fornecedor eu deveria cotar antes de decidir
+
+Formato: Use os 5 blocos acima. Seja direto — 2-3 linhas por item, sem texto decorativo.
+
+Limitações: Não invente informações. Se algo não estiver na proposta, registre como "não informado". Não sugira negociação de preço sem base — sugira apenas o que a análise dos dados permite justificar.</div>
+        <button class="copy-btn" data-copy="p11">Copiar prompt</button>
+      </div>
+
+      <div class="prompt-card" data-function="compras">
+        <div class="prompt-card-header">
+          <div>
+            <div class="prompt-card-title">12 · Redigir E-mail de Cobrança Educado</div>
+            <p class="prompt-card-desc">Firme mas mantém relacionamento profissional B2B.</p>
+          </div>
+          <span class="prompt-card-tag">Compras</span>
+        </div>
+        <div class="prompt-body" id="p12">Papel: Você é uma redatora especializada em cobrança comercial para negócios premium que precisam manter relacionamento com fornecedor/parceiro.
+
+Contexto: Sou do financeiro da Mulher Cheirosa. Preciso cobrar [pessoa/empresa] sobre [pendência: pagamento em atraso, envio de documento, contrapartida de acordo]. Já conversamos [X] vezes sobre isso sem retorno. A cobrança precisa ser firme mas manter o relacionamento profissional.
+
+Contexto adicional:
+- Valor/pendência: [descreva]
+- Vencimento original: [data]
+- Tentativas anteriores: [breve resumo]
+
+Tarefa: Redija e-mail de cobrança com:
+- Assunto claro e profissional (não passivo-agressivo)
+- Abertura curta
+- Resumo objetivo do que está pendente
+- Prazo claro para regularização
+- Consequências caso não haja retorno (sem ameaça)
+- Fechamento cordial
+
+Formato:
+- Linha "Assunto:" no topo
+- Corpo do e-mail com máximo 12 linhas
+- Fechamento com nome/cargo
+
+Limitações: Não usar linguagem agressiva ou ameaçadora. Não ser passivo demais ("perdão pelo incômodo"). Não prometer flexibilidade sem autorização. Tom: firme e profissional, adequado para relação B2B premium.</div>
+        <button class="copy-btn" data-copy="p12">Copiar prompt</button>
+      </div>
+
+    </div><!-- /prompts-list -->
+
+    <div class="callout" style="margin-bottom:40px">
+      <p><strong>Como usar:</strong> clique em "Copiar prompt", cole no ChatGPT, Claude ou Gemini, e substitua os campos [entre colchetes] com seus dados reais. Quanto mais específico nos colchetes, melhor a resposta.</p>
+    </div>
+  </div>
+
+  <section class="section content-section">
+    <div class="site-container" style="display:flex; justify-content:space-between; padding:24px 0; border-top:1px solid var(--border)">
+      <a href="../index.html" style="font-size:14px; color:var(--accent)">← Início</a>
+      <a href="../artefatos/index.html" style="font-size:14px; color:var(--accent)">Artefatos →</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Workshop IA · Grupo Mulher Cheirosa & Fígaro · Facilitador: Rafael Lima · <a href="https://instagram.com/iacomrafael" target="_blank" rel="noopener">@iacomrafael</a></p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>

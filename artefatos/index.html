@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artefatos — Workshop IA · MC & Fígaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .artefato-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 24px 0 40px;
+    }
+    .artefato-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      position: relative;
+    }
+    .artefato-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 8px 8px 0 0;
+    }
+    .artefato-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .artefato-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    .artefato-desc {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+    .artefato-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: var(--bg-warm);
+      color: var(--accent-dark);
+      border: 1px solid var(--border-strong);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+    .artefato-body {
+      background: var(--bg-warm);
+      padding: 16px 18px;
+      border-radius: 6px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--ink);
+      white-space: pre-wrap;
+      line-height: 1.6;
+      border-left: 3px solid var(--accent-warm);
+      margin-bottom: 12px;
+      overflow-x: auto;
+    }
+    .artefato-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .copy-btn, .download-btn {
+      padding: 8px 16px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background .15s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .copy-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+    .copy-btn:hover { background: var(--accent-dark); }
+    .copy-btn.copied { background: #2e7d32; }
+    .download-btn {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+    .download-btn:hover { background: var(--accent); color: #fff; }
+    .como-usar {
+      font-size: 13px;
+      color: var(--ink-muted);
+      padding: 10px 0 0;
+      margin-top: 12px;
+      border-top: 1px dashed var(--border);
+    }
+    .como-usar strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../index.html" class="topbar-logo">Workshop IA · MC & Fígaro</a>
+      <nav class="topbar-nav">
+        <a href="../index.html">Início</a>
+        <a href="../banco-de-prompts/index.html">Banco de Prompts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="module-header site-container">
+    <p class="eyebrow">Exercícios</p>
+    <h1>Artefatos para Download</h1>
+    <div class="module-header-meta">
+      <span>3 recortes de dados fictícios da MC</span>
+      <span>·</span>
+      <span>Para praticar os exercícios do workshop</span>
+    </div>
+  </div>
+
+  <div class="site-container">
+    <div class="callout warning">
+      <p><strong>Importante:</strong> todos os dados abaixo são <strong>fictícios</strong>,
+      criados apenas para o workshop. Nomes, valores e situações não representam
+      pessoas ou casos reais da Mulher Cheirosa.</p>
+    </div>
+
+    <div class="artefato-list">
+
+      <!-- ARTEFATO 1 -->
+      <div class="artefato-card">
+        <div class="artefato-header">
+          <div>
+            <h3 class="artefato-title">1 · Vendas por Unidade — Junho/2026</h3>
+            <p class="artefato-desc">Recorte de dados fictícios para exercício do M2 · Caso 1 (análise comparativa entre unidades).</p>
+          </div>
+          <span class="artefato-tag">Para M2</span>
+        </div>
+        <div class="artefato-body" id="a1">Grupo Mulher Cheirosa — Consolidado Junho/2026 (dados fictícios)
+
+MAISON ALDEOTA (Fortaleza)
+- Faturamento: R$ 187.400
+- Ticket médio: R$ 380
+- Nº de atendimentos: 493
+- Taxa de retorno em 30 dias: 62%
+- Mix top 3: Banho de Lua (28%), Cronograma Capilar (19%), Cortes (17%)
+- Serviço em queda: Depilação (-14% vs maio)
+
+RIOMAR PAPICU (Fortaleza)
+- Faturamento: R$ 224.800
+- Ticket médio: R$ 265
+- Nº de atendimentos: 848
+- Taxa de retorno em 30 dias: 38%
+- Mix top 3: Cortes (26%), Unhas (22%), Maquiagem (16%)
+- Serviço em queda: Micropigmentação (-8% vs maio)
+
+RIOMAR RECIFE (Pernambuco)
+- Faturamento: R$ 156.200
+- Ticket médio: R$ 298
+- Nº de atendimentos: 524
+- Taxa de retorno em 30 dias: 44%
+- Mix top 3: Banho de Lua (24%), Cortes (21%), Unhas (18%)
+- Serviço em queda: Cronograma Capilar (-11% vs maio)
+
+Comparativo vs Junho/2025:
+- Maison: +8% faturamento, +5% ticket
+- RioMar FOR: +12% faturamento, -3% ticket
+- RioMar Recife: +22% faturamento, +9% ticket</div>
+        <div class="artefato-actions">
+          <button class="copy-btn" data-copy="a1">Copiar dados</button>
+          <a href="downloads/vendas-junho-2026.txt" download class="download-btn">↓ Baixar .txt</a>
+        </div>
+        <p class="como-usar"><strong>Como usar:</strong> abra o <a href="../m2/index.html">M2 · Caso 1</a>, copie o prompt, cole os dados acima onde o prompt indica <code>[cole os dados aqui]</code>, e rode no ChatGPT ou Claude.</p>
+      </div>
+
+      <!-- ARTEFATO 2 -->
+      <div class="artefato-card">
+        <div class="artefato-header">
+          <div>
+            <h3 class="artefato-title">2 · Base de Clientes Banho de Lua — Q2/2026</h3>
+            <p class="artefato-desc">Recorte fictício para exercício do M2 · Caso 2 (cross-sell). Iniciais anônimas.</p>
+          </div>
+          <span class="artefato-tag">Para M2</span>
+        </div>
+        <div class="artefato-body" id="a2">Clientes Banho de Lua — abril a junho/2026 (dados fictícios)
+
+Cliente | Idade | Unidade | Freq. últimos 3m | Ticket médio | Outros serviços 12m
+--------|-------|---------|------------------|--------------|--------------------
+M.V.C.  | 42    | Maison  | 3                | R$ 420       | Cronograma Capilar, Micropigmentação
+A.R.L.  | 28    | Maison  | 2                | R$ 380       | -
+F.M.S.  | 35    | RioMar F| 2                | R$ 350       | Cortes
+J.P.N.  | 51    | Maison  | 3                | R$ 460       | Cronograma, Estética Facial
+C.R.O.  | 26    | RioMar F| 1                | R$ 320       | Maquiagem para eventos
+L.B.T.  | 44    | Maison  | 3                | R$ 490       | Cronograma, Micropigmentação
+R.A.M.  | 32    | RioMar R| 2                | R$ 340       | Cortes, Unhas
+S.G.P.  | 38    | Maison  | 2                | R$ 400       | -
+V.K.D.  | 29    | RioMar R| 1                | R$ 310       | Unhas
+T.M.C.  | 47    | Maison  | 3                | R$ 450       | Cronograma, Estética Facial
+B.O.H.  | 33    | RioMar F| 2                | R$ 360       | Maquiagem para eventos
+G.E.F.  | 41    | Maison  | 2                | R$ 410       | Cortes, Cronograma
+N.S.A.  | 25    | RioMar F| 1                | R$ 300       | Unhas
+P.R.Q.  | 52    | Maison  | 3                | R$ 480       | Cronograma, Micropigmentação, Estética
+D.L.V.  | 30    | RioMar R| 2                | R$ 330       | Cortes
+
+Total: 15 clientes | Idade média: 37 | Ticket médio agregado: R$ 393</div>
+        <div class="artefato-actions">
+          <button class="copy-btn" data-copy="a2">Copiar dados</button>
+          <a href="downloads/clientes-banho-de-lua-q2-2026.txt" download class="download-btn">↓ Baixar .txt</a>
+        </div>
+        <p class="como-usar"><strong>Como usar:</strong> abra o <a href="../m2/index.html">M2 · Caso 2</a>, copie o prompt, cole os dados acima onde indicado, e peça análise de cross-sell para Spa da Noiva ou Cronograma Capilar.</p>
+      </div>
+
+      <!-- ARTEFATO 3 -->
+      <div class="artefato-card">
+        <div class="artefato-header">
+          <div>
+            <h3 class="artefato-title">3 · Avaliação Negativa — Google Reviews</h3>
+            <p class="artefato-desc">Avaliação fictícia para exercício do M3 · Caso 3 (resposta com elegância).</p>
+          </div>
+          <span class="artefato-tag">Para M3</span>
+        </div>
+        <div class="artefato-body" id="a3">Avaliação recebida no Google Reviews — 2 estrelas
+Autora: Cliente (nome não completo no perfil)
+Data: 15/06/2026
+
+"Fui na unidade do RioMar Fortaleza no sábado para fazer o Banho de Lua
+e um corte. Marquei para 14h e só fui atendida depois das 15h. Ninguém me
+avisou nada, nem ofereceu um café. Quando enfim me chamaram, a
+profissional parecia com pressa e o resultado do corte não ficou como eu
+tinha pedido — pedi um Long Bob e saiu mais curto do que devia. Paguei
+R$ 480 e saí frustrada. Esperava mais de uma clínica com essa fama.
+Provavelmente não volto."</div>
+        <div class="artefato-actions">
+          <button class="copy-btn" data-copy="a3">Copiar avaliação</button>
+          <a href="downloads/avaliacao-negativa.txt" download class="download-btn">↓ Baixar .txt</a>
+        </div>
+        <p class="como-usar"><strong>Como usar:</strong> abra o <a href="../m3/index.html">M3 · Caso 3</a>, copie o prompt, cole a avaliação acima onde indicado, e produza a resposta pública com elegância. Depois compare com o texto que sairia sem o framework PCTFL.</p>
+      </div>
+
+    </div><!-- /artefato-list -->
+
+    <div class="callout">
+      <p><strong>Sugestão de sequência para o workshop:</strong></p>
+      <ol style="margin-top:10px; margin-bottom:0">
+        <li>M2 · Caso 1 com <strong>Artefato 1</strong> (vendas por unidade)</li>
+        <li>M2 · Caso 2 com <strong>Artefato 2</strong> (base de clientes)</li>
+        <li>M3 · Caso 3 com <strong>Artefato 3</strong> (avaliação negativa)</li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="section content-section">
+    <div class="site-container" style="display:flex; justify-content:space-between; padding:24px 0; border-top:1px solid var(--border)">
+      <a href="../banco-de-prompts/index.html" style="font-size:14px; color:var(--accent)">← Banco de Prompts</a>
+      <a href="../index.html" style="font-size:14px; color:var(--accent)">Início →</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Workshop IA · Grupo Mulher Cheirosa & Fígaro · Facilitador: Rafael Lima · <a href="https://instagram.com/iacomrafael" target="_blank" rel="noopener">@iacomrafael</a></p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>

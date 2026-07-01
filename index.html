@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop IA · Grupo Mulher Cheirosa & Fígaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="topbar-logo">Workshop IA · MC & Fígaro</a>
+      <nav class="topbar-nav">
+        <a href="banco-de-prompts/index.html">Banco de Prompts</a>
+        <a href="artefatos/index.html">Artefatos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="site-container" style="text-align:center">
+      <p class="eyebrow">Workshop · IA Aplicada · Grupo Mulher Cheirosa & Fígaro</p>
+      <h1>De Amador a Profissional<br>em 2 Horas</h1>
+      <p class="hero-subtitle">
+        Material de referência do workshop. Acesse os módulos na ordem,
+        pratique com os exercícios e leve os prompts para o dia a dia da MC.
+      </p>
+      <div class="bignum-grid" style="margin-top:32px; max-width:720px; margin-left:auto; margin-right:auto">
+        <div class="bignum">
+          <p class="bignum-value">7</p>
+          <p class="bignum-label">Respondentes</p>
+          <p class="bignum-desc">Sondagem de perfil anterior ao workshop</p>
+        </div>
+        <div class="bignum">
+          <p class="bignum-value">86%</p>
+          <p class="bignum-label">Usa IA toda semana</p>
+          <p class="bignum-desc">43% usa diariamente · maturidade média 3.7/5</p>
+        </div>
+        <div class="bignum">
+          <p class="bignum-value">3</p>
+          <p class="bignum-label">Módulos práticos</p>
+          <p class="bignum-desc">2 horas presenciais com hands-on</p>
+        </div>
+        <div class="bignum">
+          <p class="bignum-value">12</p>
+          <p class="bignum-label">Prompts prontos</p>
+          <p class="bignum-desc">Framework PCTFL por função na MC</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quem é a turma -->
+  <main>
+    <div class="site-container" style="max-width:960px">
+
+      <section class="reveal" style="padding-top:32px">
+        <p class="eyebrow">Diagnóstico</p>
+        <h2 style="font-size:22px; margin:0 0 6px">Quem é a turma da MC</h2>
+        <p style="font-size:14.5px; color:var(--ink-soft); margin:0 0 18px">Dados reais da sondagem de perfil aplicada antes do workshop. O conteúdo foi calibrado a partir destes números — com espaço para adaptar ao público real do dia.</p>
+
+        <div class="turma-section">
+          <!-- Donut: distribuição por função -->
+          <div class="turma-col">
+            <p class="eyebrow">Distribuição por função</p>
+            <h3>7 respondentes · 3 áreas</h3>
+            <div class="donut-box">
+              <svg class="donut-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Distribuição da turma por função">
+                <!-- Donut segments. Stroke-dasharray total = 502.4 (=2*PI*80). Order: Gestão 71%, Compras 14%, Outro 14% (14+14=28) -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#ead9d0" stroke-width="32"/>
+                <!-- Gestão 71% -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#a05a5a" stroke-width="32"
+                        stroke-dasharray="356.71 502.4" stroke-dashoffset="0"
+                        transform="rotate(-90 100 100)"/>
+                <!-- Compras 14% -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#c9a882" stroke-width="32"
+                        stroke-dasharray="70.34 502.4" stroke-dashoffset="-356.71"
+                        transform="rotate(-90 100 100)"/>
+                <!-- Outro 14% -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#7a3844" stroke-width="32"
+                        stroke-dasharray="70.34 502.4" stroke-dashoffset="-427.05"
+                        transform="rotate(-90 100 100)"/>
+                <!-- Centro -->
+                <text x="100" y="96" text-anchor="middle" font-family="Playfair Display, serif" font-size="28" font-weight="700" fill="#1f1d1a">7</text>
+                <text x="100" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#8f8678" letter-spacing="1">PESSOAS</text>
+              </svg>
+              <div class="donut-legend">
+                <div class="donut-legend-row">
+                  <span class="donut-legend-dot" style="background:#a05a5a"></span>
+                  <span class="donut-legend-count">71%</span>
+                  <span class="donut-legend-lbl"><strong>💼 Coordenação / Gestão</strong></span>
+                </div>
+                <div class="donut-legend-row">
+                  <span class="donut-legend-dot" style="background:#c9a882"></span>
+                  <span class="donut-legend-count">14%</span>
+                  <span class="donut-legend-lbl"><strong>🛒 Compras</strong></span>
+                </div>
+                <div class="donut-legend-row">
+                  <span class="donut-legend-dot" style="background:#7a3844"></span>
+                  <span class="donut-legend-count">14%</span>
+                  <span class="donut-legend-lbl"><strong>📢 Outro (marketing provável)</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bars: top dores -->
+          <div class="turma-col">
+            <p class="eyebrow">O que consome mais tempo</p>
+            <h3>Dores da turma</h3>
+            <div class="hbar-graph">
+              <div class="hbar-row">
+                <span class="hbar-label">Analisar relatórios de vendas</span>
+                <div class="hbar-track"><div class="hbar-fill" style="width:100%"></div></div>
+                <span class="hbar-pct">3</span>
+              </div>
+              <div class="hbar-row">
+                <span class="hbar-label">Cruzar planilhas de clientes/serviços</span>
+                <div class="hbar-track"><div class="hbar-fill" style="width:100%"></div></div>
+                <span class="hbar-pct">3</span>
+              </div>
+              <div class="hbar-row">
+                <span class="hbar-label">Criar conteúdo para redes sociais</span>
+                <div class="hbar-track"><div class="hbar-fill" style="width:33%"></div></div>
+                <span class="hbar-pct">1</span>
+              </div>
+            </div>
+            <p style="font-size:12px; color:var(--ink-muted); margin:12px 0 0">Número de pessoas (de 7) que citaram cada dor. 86% da turma sofre com análise de dados e planilhas.</p>
+
+            <p class="eyebrow" style="margin-top:24px">Expectativas top</p>
+            <div class="hbar-graph">
+              <div class="hbar-row">
+                <span class="hbar-label">Reduzir tempo em tarefas repetitivas</span>
+                <div class="hbar-track"><div class="hbar-fill" style="width:100%"></div></div>
+                <span class="hbar-pct">4</span>
+              </div>
+              <div class="hbar-row">
+                <span class="hbar-label">Gerar ideias de promoções/campanhas</span>
+                <div class="hbar-track"><div class="hbar-fill" style="width:75%"></div></div>
+                <span class="hbar-pct">3</span>
+              </div>
+              <div class="hbar-row">
+                <span class="hbar-label">Analisar desempenho da equipe</span>
+                <div class="hbar-track"><div class="hbar-fill" style="width:75%"></div></div>
+                <span class="hbar-pct">3</span>
+              </div>
+            </div>
+            <p style="font-size:12px; color:var(--ink-muted); margin:12px 0 0">Voto múltiplo — o que cada participante espera aprender.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- A Jornada do Workshop (timeline) -->
+      <section class="reveal" style="padding: 32px 0 16px">
+        <p class="eyebrow">A Jornada</p>
+        <h2 style="font-size:22px; margin:0 0 6px">O que vamos fazer em 2 horas</h2>
+        <p style="font-size:14.5px; color:var(--ink-soft); margin:0 0 8px">
+          3 módulos práticos com hands-on · Você sai com prompt seu, não com cópia.
+        </p>
+
+        <div class="jornada-timeline">
+
+          <!-- Abertura -->
+          <div class="jornada-step">
+            <div class="jornada-num">0</div>
+            <h3 class="jornada-step-title">Boas-vindas + Auto-diagnóstico</h3>
+            <p class="jornada-label">Prática · 10 min</p>
+            <p class="jornada-text">Mapear seu nível atual nos 7 Níveis de Uso de IA.</p>
+            <p class="jornada-label">Você leva</p>
+            <p class="jornada-entregavel">→ Onde está e onde quer chegar</p>
+          </div>
+
+          <!-- M1 -->
+          <div class="jornada-step">
+            <div class="jornada-num">M1</div>
+            <h3 class="jornada-step-title">Amador vs Profissional + PCTFL</h3>
+            <p class="jornada-label">Prática · 25 min</p>
+            <p class="jornada-text">Contraste lado a lado. Framework PCTFL como método.</p>
+            <p class="jornada-label">Você leva</p>
+            <p class="jornada-entregavel">→ 1 prompt PCTFL construído por você</p>
+          </div>
+
+          <!-- M2 -->
+          <div class="jornada-step">
+            <div class="jornada-num">M2</div>
+            <h3 class="jornada-step-title">IA para Gestão</h3>
+            <p class="jornada-label">Prática · 35 min</p>
+            <p class="jornada-text">Análise de vendas por unidade + planilha de clientes cruzada.</p>
+            <p class="jornada-label">Você leva</p>
+            <p class="jornada-entregavel">→ Análise executiva pronta para levar</p>
+          </div>
+
+          <!-- M3 -->
+          <div class="jornada-step">
+            <div class="jornada-num">M3</div>
+            <h3 class="jornada-step-title">IA para Comunicação e Conteúdo</h3>
+            <p class="jornada-label">Prática · 30 min</p>
+            <p class="jornada-text">Legendas MC, WhatsApp de agendamento, resposta a avaliação.</p>
+            <p class="jornada-label">Você leva</p>
+            <p class="jornada-entregavel">→ 3 textos prontos para publicar</p>
+          </div>
+
+          <!-- Fechamento -->
+          <div class="jornada-step">
+            <div class="jornada-num">4</div>
+            <h3 class="jornada-step-title">Plano de 30 Dias</h3>
+            <p class="jornada-label">Prática · 20 min</p>
+            <p class="jornada-text">Quick wins por função + 1 rotina para começar amanhã.</p>
+            <p class="jornada-label">Você leva</p>
+            <p class="jornada-entregavel">→ Plano priorizado por você</p>
+          </div>
+
+        </div><!-- /jornada-timeline -->
+      </section>
+
+      <!-- Divisor -->
+      <div style="padding: 16px 0 12px">
+        <p class="eyebrow">Detalhe de cada módulo</p>
+        <h2 style="font-size:20px; margin:0">Abra na ordem para acompanhar</h2>
+      </div>
+
+      <div class="modules-grid">
+
+        <!-- M1 -->
+        <a href="m1/index.html" class="module-card reveal" style="text-decoration:none; color:inherit">
+          <p class="module-card-eyebrow eyebrow">M1 · Fundamentos</p>
+          <h3>De Amador a Profissional</h3>
+          <p class="module-card-desc">
+            O diagnóstico que a turma precisa: por que usar ChatGPT todo dia não é o mesmo que
+            usar com método. Os 7 Níveis de Uso e o framework PCTFL aplicado ao contexto da MC.
+          </p>
+          <div class="module-card-footer">
+            <span class="module-card-duration">25 min</span>
+            <span class="module-card-link">Acessar →</span>
+          </div>
+        </a>
+
+        <!-- M2 -->
+        <a href="m2/index.html" class="module-card reveal" style="text-decoration:none; color:inherit">
+          <p class="module-card-eyebrow eyebrow">M2 · Gestão</p>
+          <h3>IA para Gestão</h3>
+          <p class="module-card-desc">
+            Analisar vendas por unidade (Maison / RioMar FOR / RioMar Recife), cruzar planilha
+            de clientes, gerar relatório executivo. Núcleo do workshop para 86% da turma.
+          </p>
+          <div class="module-card-footer">
+            <span class="module-card-duration">35 min</span>
+            <span class="module-card-link">Acessar →</span>
+          </div>
+        </a>
+
+        <!-- M3 -->
+        <a href="m3/index.html" class="module-card reveal" style="text-decoration:none; color:inherit">
+          <p class="module-card-eyebrow eyebrow">M3 · Comunicação</p>
+          <h3>IA para Comunicação e Conteúdo</h3>
+          <p class="module-card-desc">
+            Legendas com tom MC (Banho de Lua, Noivas), WhatsApp de agendamento, resposta a
+            avaliação negativa e pauta editorial mensal. Foco em resultado publicável.
+          </p>
+          <div class="module-card-footer">
+            <span class="module-card-duration">30 min</span>
+            <span class="module-card-link">Acessar →</span>
+          </div>
+        </a>
+
+        <!-- Banco de Prompts -->
+        <a href="banco-de-prompts/index.html" class="module-card reveal" style="text-decoration:none; color:inherit">
+          <p class="module-card-eyebrow eyebrow">Referência</p>
+          <h3>Banco de Prompts MC</h3>
+          <p class="module-card-desc">
+            12 prompts PCTFL prontos para copiar — organizados por função: Gestão,
+            Marketing, Atendimento e Compras. Contexto real da Mulher Cheirosa.
+          </p>
+          <div class="module-card-footer">
+            <span class="module-card-link">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- Artefatos -->
+        <a href="artefatos/index.html" class="module-card reveal" style="text-decoration:none; color:inherit">
+          <p class="module-card-eyebrow eyebrow">Exercícios</p>
+          <h3>Artefatos para Download</h3>
+          <p class="module-card-desc">
+            Recortes de dados fictícios (planilha de vendas por unidade, base de clientes,
+            avaliação negativa) para praticar os exercícios do workshop.
+          </p>
+          <div class="module-card-footer">
+            <span class="module-card-link">Baixar →</span>
+          </div>
+        </a>
+
+      </div><!-- /modules-grid -->
+    </div><!-- /site-container -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Workshop IA · Grupo Mulher Cheirosa & Fígaro · Facilitador: Rafael Lima · <a href="https://instagram.com/iacomrafael" target="_blank" rel="noopener">@iacomrafael</a></p>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

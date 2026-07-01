@@ -1,0 +1,21 @@
+Clientes Banho de Lua — abril a junho/2026 (dados fictícios)
+
+Cliente | Idade | Unidade  | Freq. últimos 3m | Ticket médio | Outros serviços 12m
+--------|-------|----------|------------------|--------------|----------------------------------
+M.V.C.  | 42    | Maison   | 3                | R$ 420       | Cronograma Capilar, Micropigmentação
+A.R.L.  | 28    | Maison   | 2                | R$ 380       | -
+F.M.S.  | 35    | RioMar F | 2                | R$ 350       | Cortes
+J.P.N.  | 51    | Maison   | 3                | R$ 460       | Cronograma, Estética Facial
+C.R.O.  | 26    | RioMar F | 1                | R$ 320       | Maquiagem para eventos
+L.B.T.  | 44    | Maison   | 3                | R$ 490       | Cronograma, Micropigmentação
+R.A.M.  | 32    | RioMar R | 2                | R$ 340       | Cortes, Unhas
+S.G.P.  | 38    | Maison   | 2                | R$ 400       | -
+V.K.D.  | 29    | RioMar R | 1                | R$ 310       | Unhas
+T.M.C.  | 47    | Maison   | 3                | R$ 450       | Cronograma, Estética Facial
+B.O.H.  | 33    | RioMar F | 2                | R$ 360       | Maquiagem para eventos
+G.E.F.  | 41    | Maison   | 2                | R$ 410       | Cortes, Cronograma
+N.S.A.  | 25    | RioMar F | 1                | R$ 300       | Unhas
+P.R.Q.  | 52    | Maison   | 3                | R$ 480       | Cronograma, Micropigmentação, Estética
+D.L.V.  | 30    | RioMar R | 2                | R$ 330       | Cortes
+
+Total: 15 clientes | Idade média: 37 | Ticket médio agregado: R$ 393
