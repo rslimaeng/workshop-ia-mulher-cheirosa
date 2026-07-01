@@ -220,6 +220,56 @@ p {
   color: var(--ink-soft);
 }
 
+/* ── 6b. Hero: bloco "o que vamos ver juntos" ────────────── */
+.hero-aprender {
+  max-width: 620px;
+  margin: 36px auto 0;
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: left;
+}
+.hero-aprender-lbl {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-warm-dark);
+  margin: 0 0 14px;
+  text-align: center;
+}
+.hero-aprender ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hero-aprender li {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  padding: 9px 0 9px 26px;
+  position: relative;
+  border-bottom: 1px dashed var(--border);
+}
+.hero-aprender li:last-child { border-bottom: none; }
+.hero-aprender li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+}
+.hero-aprender li strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) {
+  .hero-aprender { padding: 20px 20px; margin-top: 28px; }
+  .hero-aprender li { font-size: 14px; }
+}
+
 /* ── 7. Grid de módulos (home) ───────────────────────────── */
 .modules-grid {
   display: grid;

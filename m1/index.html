@@ -149,17 +149,75 @@
       margin: 0;
     }
     .mercado-card p sup { color: var(--accent); font-weight: 600; }
+    .mercado-card-metrica {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 12px 0 8px;
+      padding: 8px 10px;
+      background: var(--bg-warm);
+      border-radius: 6px;
+      border-left: 2px solid var(--accent-warm);
+    }
+    .mercado-card-metrica-valor {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--accent-dark);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .mercado-card-metrica-lbl {
+      font-size: 12px;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+    .mercado-tools {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mercado-tools-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 10px;
+      align-items: baseline;
+      font-size: 12.5px;
+    }
+    .mercado-tools-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent-warm-dark);
+    }
+    .mercado-tools-val {
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .mercado-tools-val strong { font-weight: 600; }
 
     /* Rodapé de referências */
     sup.ref {
+      font-size: 10px;
+      font-weight: 700;
       color: var(--accent);
-      font-weight: 600;
-      font-size: 11px;
-      margin-left: 1px;
-      cursor: pointer;
+      margin-left: 2px;
+      vertical-align: super;
+      line-height: 0;
+      position: relative;
+      top: -1px;
     }
-    sup.ref a { color: inherit; text-decoration: none; }
+    sup.ref a {
+      color: inherit;
+      text-decoration: none;
+      padding: 0 2px;
+    }
     sup.ref a:hover { text-decoration: underline; }
+    sup.ref + sup.ref { margin-left: 1px; }
     .refs-footer {
       margin-top: 24px;
       padding-top: 14px;
@@ -339,22 +397,22 @@
         <div class="bignum compact">
           <p class="bignum-value">US$ 4,9 bi</p>
           <p class="bignum-label">Mercado global 2025</p>
-          <p class="bignum-desc">IA aplicada em beleza e cosméticos<sup class="ref"><a href="#ref-4">[4]</a></sup></p>
+          <p class="bignum-desc">IA aplicada em beleza e cosméticos<sup class="ref"><a href="https://www.insightaceanalytic.com/report/global-artificial-intelligence-ai-in-beauty-and-cosmetics-market/1051" target="_blank" rel="noopener">[4]</a></sup></p>
         </div>
         <div class="bignum compact">
           <p class="bignum-value">US$ 33,7 bi</p>
           <p class="bignum-label">Projeção 2035</p>
-          <p class="bignum-desc">CAGR de 22,3% ao ano<sup class="ref"><a href="#ref-4">[4]</a></sup></p>
+          <p class="bignum-desc">CAGR de 22,3% ao ano<sup class="ref"><a href="https://www.insightaceanalytic.com/report/global-artificial-intelligence-ai-in-beauty-and-cosmetics-market/1051" target="_blank" rel="noopener">[4]</a></sup></p>
         </div>
         <div class="bignum compact">
           <p class="bignum-value">+30%</p>
           <p class="bignum-label">ROI em marketing</p>
-          <p class="bignum-desc">Campanhas com segmentação por IA<sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+          <p class="bignum-desc">Campanhas com segmentação por IA<sup class="ref"><a href="https://www.meevo.com/blog/salon-ai-experiences/" target="_blank" rel="noopener">[2]</a></sup></p>
         </div>
         <div class="bignum compact">
           <p class="bignum-value">7,6%</p>
           <p class="bignum-label">CAGR Brasil premium</p>
-          <p class="bignum-desc">Segmento profissional em premiumização<sup class="ref"><a href="#ref-5">[5]</a></sup></p>
+          <p class="bignum-desc">Segmento profissional em premiumização<sup class="ref"><a href="https://www.mordorintelligence.com/industry-reports/brazil-cosmetics-products-market-industry" target="_blank" rel="noopener">[5]</a></sup></p>
         </div>
       </div>
 
@@ -364,27 +422,100 @@
       <div class="mercado-grid">
         <div class="mercado-card">
           <h4><span class="caso-num">01</span> Agendamento e atendimento 24h</h4>
-          <p>Assistentes virtuais que agendam, confirmam e respondem dúvidas comuns fora do horário. Clínicas relatam queda mensurável em no-shows nas primeiras semanas.<sup class="ref"><a href="#ref-1">[1]</a></sup><sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+          <p>Assistentes virtuais que agendam, confirmam e respondem dúvidas comuns fora do horário. Clínicas relatam queda mensurável em no-shows nas primeiras semanas.<sup class="ref"><a href="https://workee.ai/blog/ai-for-med-spas-and-salons-2026" target="_blank" rel="noopener">[1]</a></sup><sup class="ref"><a href="https://www.meevo.com/blog/salon-ai-experiences/" target="_blank" rel="noopener">[2]</a></sup></p>
+          <div class="mercado-card-metrica">
+            <span class="mercado-card-metrica-valor">-30%</span>
+            <span class="mercado-card-metrica-lbl">de no-show com lembretes automáticos em poucas semanas<sup class="ref"><a href="https://www.meevo.com/blog/salon-ai-experiences/" target="_blank" rel="noopener">[2]</a></sup></span>
+          </div>
+          <div class="mercado-tools">
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">Plataformas</span>
+              <span class="mercado-tools-val">Fresha AI · Booksy · Zenoti</span>
+            </div>
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">DIY (o que dá pra montar)</span>
+              <span class="mercado-tools-val"><strong>n8n</strong> + WhatsApp Business API + ChatGPT/Claude</span>
+            </div>
+          </div>
         </div>
+
         <div class="mercado-card">
           <h4><span class="caso-num">02</span> Segmentação e follow-up personalizado</h4>
-          <p>Mensagem de aniversário, oferta por histórico de serviço, reativação de cliente que não volta há 90 dias — enviadas em escala mas com tom pessoal.<sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+          <p>Mensagem de aniversário, oferta por histórico de serviço, reativação de cliente que não volta há 90 dias — enviadas em escala mas com tom pessoal.<sup class="ref"><a href="https://www.meevo.com/blog/salon-ai-experiences/" target="_blank" rel="noopener">[2]</a></sup></p>
+          <div class="mercado-card-metrica">
+            <span class="mercado-card-metrica-valor">+30%</span>
+            <span class="mercado-card-metrica-lbl">de ROI em campanhas com segmentação por IA<sup class="ref"><a href="https://www.meevo.com/blog/salon-ai-experiences/" target="_blank" rel="noopener">[2]</a></sup></span>
+          </div>
+          <div class="mercado-tools">
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">Plataformas</span>
+              <span class="mercado-tools-val">RD Station Marketing · Klaviyo · ActiveCampaign</span>
+            </div>
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">DIY (o que dá pra montar)</span>
+              <span class="mercado-tools-val"><strong>n8n</strong> puxando planilha/CRM + ChatGPT gerando texto por perfil</span>
+            </div>
+          </div>
         </div>
+
         <div class="mercado-card">
           <h4><span class="caso-num">03</span> Análise de padrões e next-best-action</h4>
-          <p>A IA olha as reservas em tempo real e sugere ação: "promova este pacote na quarta, que é o dia fraco". Deixa o gestor decidir; ela indica o que olhar.<sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+          <p>A IA olha as reservas em tempo real e sugere ação: "promova este pacote na quarta, que é o dia fraco". Deixa o gestor decidir; ela indica o que olhar.<sup class="ref"><a href="https://www.meevo.com/blog/salon-ai-experiences/" target="_blank" rel="noopener">[2]</a></sup></p>
+          <div class="mercado-tools">
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">Plataformas</span>
+              <span class="mercado-tools-val">Zenoti AI · Mindbody Insights</span>
+            </div>
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">DIY (o que dá pra montar)</span>
+              <span class="mercado-tools-val">Claude/ChatGPT como analista + planilha semanal colada no chat (sem código)</span>
+            </div>
+          </div>
         </div>
+
         <div class="mercado-card">
           <h4><span class="caso-num">04</span> Geração e adaptação de conteúdo</h4>
-          <p>Legendas, scripts de consulta virtual, adaptação da mesma campanha para 3 canais (post, story, WhatsApp) — mantendo tom da marca em todas as pontas.<sup class="ref"><a href="#ref-3">[3]</a></sup></p>
+          <p>Legendas, scripts de consulta virtual, adaptação da mesma campanha para 3 canais (post, story, WhatsApp) — mantendo tom da marca em todas as pontas.<sup class="ref"><a href="https://inferencebeauty.com/blog/generative-ai-in-beauty-industry-2026/" target="_blank" rel="noopener">[3]</a></sup></p>
+          <div class="mercado-tools">
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">Plataformas</span>
+              <span class="mercado-tools-val"><strong>ChatGPT</strong> · <strong>Claude</strong> · <strong>Gemini</strong> (o núcleo do workshop)</span>
+            </div>
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">DIY (o que dá pra montar)</span>
+              <span class="mercado-tools-val">Banco de prompts PCTFL compartilhado no time — igual ao deste workshop</span>
+            </div>
+          </div>
         </div>
+
         <div class="mercado-card">
           <h4><span class="caso-num">05</span> Diagnóstico de pele e cabelo por foto</h4>
-          <p>Cliente manda uma selfie; a IA sugere serviços do portfólio compatíveis. Ferramentas de análise já estão acessíveis para clínicas de médio porte no Brasil.<sup class="ref"><a href="#ref-6">[6]</a></sup><sup class="ref"><a href="#ref-7">[7]</a></sup></p>
+          <p>Cliente manda uma selfie; a IA sugere serviços do portfólio compatíveis. Ferramentas de análise já estão acessíveis para clínicas de médio porte no Brasil.<sup class="ref"><a href="https://eupresa.ia.br/blog/ia-para-cabeleireiros-2026/" target="_blank" rel="noopener">[6]</a></sup><sup class="ref"><a href="https://www.gendo.com.br/blog-post/como-a-inteligencia-artificial-pode-transformar-seu-negocio-no-segmento-de-beleza" target="_blank" rel="noopener">[7]</a></sup></p>
+          <div class="mercado-tools">
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">Plataformas</span>
+              <span class="mercado-tools-val">Perfect Corp (YouCam) · HautAI · Modiface</span>
+            </div>
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">DIY (o que dá pra montar)</span>
+              <span class="mercado-tools-val">GPT-4o/Claude com visão + prompt curador do portfólio MC (protótipo em 1 dia)</span>
+            </div>
+          </div>
         </div>
+
         <div class="mercado-card">
           <h4><span class="caso-num">06</span> Automação de back-office</h4>
-          <p>Confirmações, atualização de estoque, cobrança, relatório semanal. Libera a equipe para o que realmente exige presença humana — a cliente.<sup class="ref"><a href="#ref-1">[1]</a></sup></p>
+          <p>Confirmações, atualização de estoque, cobrança, relatório semanal. Libera a equipe para o que realmente exige presença humana — a cliente.<sup class="ref"><a href="https://workee.ai/blog/ai-for-med-spas-and-salons-2026" target="_blank" rel="noopener">[1]</a></sup></p>
+          <div class="mercado-tools">
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">Plataformas</span>
+              <span class="mercado-tools-val">Zapier · Make</span>
+            </div>
+            <div class="mercado-tools-row">
+              <span class="mercado-tools-lbl">DIY (o que dá pra montar)</span>
+              <span class="mercado-tools-val"><strong>n8n</strong> (open-source, controle total) + ChatGPT redigindo os textos</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -662,13 +793,13 @@ beleza".</div>
       <p style="font-size:13px; color:var(--ink-muted); margin:0 0 12px">Marque conforme conclui — seu progresso fica salvo neste navegador.</p>
 
       <ul class="entregavel-list">
-        <li data-entregavel="m1-1"><strong>Sei o que é IA generativa</strong> — auto-completar treinado em massa de texto, não "cérebro que pensa".</li>
-        <li data-entregavel="m1-2"><strong>Conheço 6 casos concretos</strong> que o mercado de beleza premium já usa hoje.</li>
-        <li data-entregavel="m1-3"><strong>Sei ler os 5 sinais</strong> que indicam se uma tarefa é bom candidato para IA.</li>
-        <li data-entregavel="m1-4"><strong>Enxerguei onde o Grupo MC está</strong> no mapa dos 7 níveis e para onde faz sentido caminhar.</li>
-        <li data-entregavel="m1-5"><strong>Consigo apontar a diferença</strong> entre um prompt vago e um prompt situado no contexto MC.</li>
-        <li data-entregavel="m1-6"><strong>Memorizei PCTFL</strong> (Papel · Contexto · Tarefa · Formato · Limitações).</li>
-        <li data-entregavel="m1-7"><strong>Tenho 1 prompt PCTFL meu</strong> escrito e testado.</li>
+        <li data-entregavel="m1-1"><span class="entregavel-checkbox"></span><span class="entregavel-text"><strong>Sei o que é IA generativa</strong> — auto-completar treinado em massa de texto, não "cérebro que pensa".</span></li>
+        <li data-entregavel="m1-2"><span class="entregavel-checkbox"></span><span class="entregavel-text"><strong>Conheço 6 casos concretos</strong> que o mercado de beleza premium já usa hoje.</span></li>
+        <li data-entregavel="m1-3"><span class="entregavel-checkbox"></span><span class="entregavel-text"><strong>Sei ler os 5 sinais</strong> que indicam se uma tarefa é bom candidato para IA.</span></li>
+        <li data-entregavel="m1-4"><span class="entregavel-checkbox"></span><span class="entregavel-text"><strong>Enxerguei onde o Grupo MC está</strong> no mapa dos 7 níveis e para onde faz sentido caminhar.</span></li>
+        <li data-entregavel="m1-5"><span class="entregavel-checkbox"></span><span class="entregavel-text"><strong>Consigo apontar a diferença</strong> entre um prompt vago e um prompt situado no contexto MC.</span></li>
+        <li data-entregavel="m1-6"><span class="entregavel-checkbox"></span><span class="entregavel-text"><strong>Memorizei PCTFL</strong> (Papel · Contexto · Tarefa · Formato · Limitações).</span></li>
+        <li data-entregavel="m1-7"><span class="entregavel-checkbox"></span><span class="entregavel-text"><strong>Tenho 1 prompt PCTFL meu</strong> escrito e testado.</span></li>
       </ul>
       <p class="entregavel-progress" style="font-size:13px; color:var(--ink-muted); margin-top:12px">Marque conforme conclui — seu progresso fica salvo neste navegador.</p>
     </div>
