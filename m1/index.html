@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M1 · Fundamentos + PCTFL — Workshop IA · MC & Fígaro</title>
+  <title>M1 · Uso da IA no Contexto do Grupo MC — Workshop IA · MC & Fígaro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style.css">
   <style>
-    /* Comparativo Amador vs Profissional */
+    /* Prompt vago vs Prompt situado */
     .compare-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -25,8 +25,8 @@
       border-radius: 8px;
       padding: 20px;
     }
-    .compare-card.amador { border-left: 3px solid #b85c5c; }
-    .compare-card.profissional { border-left: 3px solid var(--accent); }
+    .compare-card.vago { border-left: 3px solid #b85c5c; }
+    .compare-card.situado { border-left: 3px solid var(--accent); }
     .compare-card h4 {
       font-family: var(--serif);
       font-size: 17px;
@@ -108,11 +108,184 @@
     }
     .niveis-num.turma { background: var(--accent-warm); color: var(--ink); }
     .niveis-num.futuro { background: var(--bg-warm); color: var(--ink-muted); border: 1px solid var(--border); }
+
+    /* Casos de mercado (grid) */
+    .mercado-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 720px) { .mercado-grid { grid-template-columns: 1fr; } }
+    .mercado-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+    .mercado-card h4 {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--ink);
+      margin: 0 0 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .mercado-card h4 .caso-num {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-warm-dark);
+      background: var(--bg-warm);
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: .06em;
+    }
+    .mercado-card p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .mercado-card p sup { color: var(--accent); font-weight: 600; }
+
+    /* Rodapé de referências */
+    sup.ref {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 11px;
+      margin-left: 1px;
+      cursor: pointer;
+    }
+    sup.ref a { color: inherit; text-decoration: none; }
+    sup.ref a:hover { text-decoration: underline; }
+    .refs-footer {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border);
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+    .refs-footer-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--accent-warm-dark);
+      margin-bottom: 8px;
+    }
+    .refs-footer ol {
+      padding-left: 20px;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .refs-footer li { margin-bottom: 4px; }
+    .refs-footer a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--border-strong);
+      word-break: break-word;
+    }
+    .refs-footer a:hover { text-decoration-color: var(--accent); }
+
+    /* Sinais */
+    .sinais-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .sinal-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-warm);
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 14px;
+      align-items: baseline;
+    }
+    .sinal-num {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .sinal-item h4 {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    .sinal-item p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* Camadas de organização */
+    .camadas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 20px 0;
+    }
+    @media (max-width: 720px) { .camadas-grid { grid-template-columns: 1fr; } }
+    .camada-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 18px 20px;
+      position: relative;
+    }
+    .camada-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 8px 8px 0 0;
+    }
+    .camada-card.pessoal::before { background: var(--accent-warm); }
+    .camada-card.equipe::before { background: var(--accent); }
+    .camada-card.grupo::before { background: var(--accent-dark); }
+    .camada-card .camada-eyebrow {
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent-warm-dark);
+      margin: 6px 0 4px;
+    }
+    .camada-card h4 {
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .camada-card p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin: 0 0 10px;
+      line-height: 1.55;
+    }
+    .camada-card .camada-exemplo {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      background: var(--bg-warm);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-top: 6px;
+    }
+    .camada-card .camada-exemplo strong { color: var(--ink); }
   </style>
 </head>
 <body>
 
-  <!-- Topbar -->
   <header class="topbar">
     <div class="topbar-inner">
       <a href="../index.html" class="topbar-logo">Workshop IA · MC & Fígaro</a>
@@ -124,18 +297,16 @@
     </div>
   </header>
 
-  <!-- Header do módulo -->
   <div class="module-header site-container">
-    <p class="eyebrow">M1 · Fundamentos + PCTFL</p>
-    <h1>De Amador a Profissional</h1>
+    <p class="eyebrow">M1 · Fundamentos</p>
+    <h1>Uso da IA no Contexto do Grupo MC</h1>
     <div class="module-header-meta">
-      <span>25 min</span>
+      <span>30 min</span>
       <span>·</span>
-      <span>Frequência alta ≠ maturidade alta</span>
+      <span>Do mercado premium para a rotina de vocês</span>
     </div>
   </div>
 
-  <!-- Seção 1: O que é IA em 1 minuto -->
   <section class="section content-section reveal">
     <div class="site-container">
       <p class="eyebrow">1 · O que é IA generativa</p>
@@ -146,24 +317,154 @@
       </p>
 
       <div class="callout">
-        <p><strong>3 implicações práticas para você da MC:</strong></p>
+        <p><strong>3 implicações práticas para vocês no dia a dia:</strong></p>
         <ul>
-          <li><strong>Ela inventa preço, procedimento e benefício com confiança total.</strong> Se você não conferir, sai errado no post. Continuar o texto de forma plausível é o que ela faz — inventar não é bug, é como ela funciona.</li>
-          <li><strong>Prompts vagos geram respostas vagas.</strong> "Crie legenda pro Banho de Lua" devolve texto genérico que qualquer salão poderia publicar.</li>
-          <li><strong>Ela melhora quando você dá papel + contexto + tarefa.</strong> Você restringe o universo de "próximas palavras prováveis" para o espaço certo.</li>
+          <li><strong>Ela inventa preço, procedimento e benefício com confiança total.</strong> Se ninguém conferir, sai errado no post. Continuar o texto de forma plausível é o que ela faz — inventar não é bug, é como ela funciona.</li>
+          <li><strong>Prompts vagos geram respostas vagas.</strong> "Cria legenda pro Banho de Lua" devolve texto genérico que qualquer clínica poderia publicar.</li>
+          <li><strong>Ela melhora quando ganha papel + contexto + tarefa.</strong> Vocês restringem o universo de "próximas palavras prováveis" para o espaço certo — o da Mulher Cheirosa, não o de um salão qualquer.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Seção 2: Os 7 Níveis -->
   <section class="section content-section reveal">
     <div class="site-container">
-      <p class="eyebrow">2 · Os 7 Níveis de Uso de IA</p>
-      <h2>Onde você está hoje?</h2>
+      <p class="eyebrow">2 · Panorama de mercado</p>
+      <h2>O que o mercado de beleza premium está fazendo com IA</h2>
+      <p style="font-size:15px; color:var(--ink-soft); margin:0 0 8px">
+        Antes de decidir o que testar dentro do Grupo MC, vale ver onde as clínicas premium ao redor do mundo já estão investindo. Isto não é hipótese — são práticas em curso hoje.
+      </p>
+
+      <div class="bignum-grid" style="margin:20px 0">
+        <div class="bignum compact">
+          <p class="bignum-value">US$ 4,9 bi</p>
+          <p class="bignum-label">Mercado global 2025</p>
+          <p class="bignum-desc">IA aplicada em beleza e cosméticos<sup class="ref"><a href="#ref-4">[4]</a></sup></p>
+        </div>
+        <div class="bignum compact">
+          <p class="bignum-value">US$ 33,7 bi</p>
+          <p class="bignum-label">Projeção 2035</p>
+          <p class="bignum-desc">CAGR de 22,3% ao ano<sup class="ref"><a href="#ref-4">[4]</a></sup></p>
+        </div>
+        <div class="bignum compact">
+          <p class="bignum-value">+30%</p>
+          <p class="bignum-label">ROI em marketing</p>
+          <p class="bignum-desc">Campanhas com segmentação por IA<sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+        </div>
+        <div class="bignum compact">
+          <p class="bignum-value">7,6%</p>
+          <p class="bignum-label">CAGR Brasil premium</p>
+          <p class="bignum-desc">Segmento profissional em premiumização<sup class="ref"><a href="#ref-5">[5]</a></sup></p>
+        </div>
+      </div>
+
+      <p class="eyebrow" style="margin-top:24px">Onde a agulha está se movendo</p>
+      <h3 style="font-family:var(--serif); font-size:19px; color:var(--ink); margin:4px 0 12px">6 casos concretos em uso hoje</h3>
+
+      <div class="mercado-grid">
+        <div class="mercado-card">
+          <h4><span class="caso-num">01</span> Agendamento e atendimento 24h</h4>
+          <p>Assistentes virtuais que agendam, confirmam e respondem dúvidas comuns fora do horário. Clínicas relatam queda mensurável em no-shows nas primeiras semanas.<sup class="ref"><a href="#ref-1">[1]</a></sup><sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+        </div>
+        <div class="mercado-card">
+          <h4><span class="caso-num">02</span> Segmentação e follow-up personalizado</h4>
+          <p>Mensagem de aniversário, oferta por histórico de serviço, reativação de cliente que não volta há 90 dias — enviadas em escala mas com tom pessoal.<sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+        </div>
+        <div class="mercado-card">
+          <h4><span class="caso-num">03</span> Análise de padrões e next-best-action</h4>
+          <p>A IA olha as reservas em tempo real e sugere ação: "promova este pacote na quarta, que é o dia fraco". Deixa o gestor decidir; ela indica o que olhar.<sup class="ref"><a href="#ref-2">[2]</a></sup></p>
+        </div>
+        <div class="mercado-card">
+          <h4><span class="caso-num">04</span> Geração e adaptação de conteúdo</h4>
+          <p>Legendas, scripts de consulta virtual, adaptação da mesma campanha para 3 canais (post, story, WhatsApp) — mantendo tom da marca em todas as pontas.<sup class="ref"><a href="#ref-3">[3]</a></sup></p>
+        </div>
+        <div class="mercado-card">
+          <h4><span class="caso-num">05</span> Diagnóstico de pele e cabelo por foto</h4>
+          <p>Cliente manda uma selfie; a IA sugere serviços do portfólio compatíveis. Ferramentas de análise já estão acessíveis para clínicas de médio porte no Brasil.<sup class="ref"><a href="#ref-6">[6]</a></sup><sup class="ref"><a href="#ref-7">[7]</a></sup></p>
+        </div>
+        <div class="mercado-card">
+          <h4><span class="caso-num">06</span> Automação de back-office</h4>
+          <p>Confirmações, atualização de estoque, cobrança, relatório semanal. Libera a equipe para o que realmente exige presença humana — a cliente.<sup class="ref"><a href="#ref-1">[1]</a></sup></p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>Como ler estes 6 casos:</strong> nem todos precisam ser prioridade agora para o Grupo MC. A pergunta certa é: <em>quais desses casos endereçam algo que a gente já sente no dia a dia?</em> É por aí que a próxima seção começa.</p>
+      </div>
+
+      <div class="refs-footer">
+        <p class="refs-footer-label">Referências desta seção</p>
+        <ol>
+          <li id="ref-1">Workee.ai — <a href="https://workee.ai/blog/ai-for-med-spas-and-salons-2026" target="_blank" rel="noopener">Best Ways Med Spas, Salons & Clinics Use AI in 2026</a></li>
+          <li id="ref-2">Meevo — <a href="https://www.meevo.com/blog/salon-ai-experiences/" target="_blank" rel="noopener">Salon AI: How Collaboration with Tech Can Lighten Your Load in 2026</a></li>
+          <li id="ref-3">Inference Beauty — <a href="https://inferencebeauty.com/blog/generative-ai-in-beauty-industry-2026/" target="_blank" rel="noopener">Generative AI in Beauty — Transformation in 2026</a></li>
+          <li id="ref-4">InsightAce Analytic — <a href="https://www.insightaceanalytic.com/report/global-artificial-intelligence-ai-in-beauty-and-cosmetics-market/1051" target="_blank" rel="noopener">AI in Beauty and Cosmetics Market Size, Scope and Trends 2026–2035</a></li>
+          <li id="ref-5">Mordor Intelligence — <a href="https://www.mordorintelligence.com/industry-reports/brazil-cosmetics-products-market-industry" target="_blank" rel="noopener">Brazil Beauty Market Size, Trends & Share Report 2026–2031</a></li>
+          <li id="ref-6">Eupresa IA — <a href="https://eupresa.ia.br/blog/ia-para-cabeleireiros-2026/" target="_blank" rel="noopener">IA para Cabeleireiros e Salões de Beleza (2026, BR)</a></li>
+          <li id="ref-7">Gendo — <a href="https://www.gendo.com.br/blog-post/como-a-inteligencia-artificial-pode-transformar-seu-negocio-no-segmento-de-beleza" target="_blank" rel="noopener">Como a IA pode transformar seu negócio no segmento de beleza (BR)</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-section reveal">
+    <div class="site-container">
+      <p class="eyebrow">3 · Onde vale investir esforço</p>
+      <h2>5 sinais para olhar antes de decidir o que testar</h2>
       <p style="font-size:15px; color:var(--ink-soft); margin:0 0 18px">
-        Marque o nível que mais parece com você. Não tem resposta certa.
-        Você só aproveita o workshop se souber onde realmente está.
+        Nem toda tarefa é bom candidato para IA. Estes cinco sinais ajudam a separar o que compensa começar hoje do que é melhor deixar para depois.
+      </p>
+
+      <div class="sinais-list">
+        <div class="sinal-item">
+          <div class="sinal-num">1</div>
+          <div>
+            <h4>Tarefa que se repete toda semana com estrutura parecida</h4>
+            <p>Se muda só o conteúdo, mas o formato é sempre o mesmo — é bom candidato. Ex.: confirmação de WhatsApp, resposta a avaliação, relatório mensal por unidade.</p>
+          </div>
+        </div>
+        <div class="sinal-item">
+          <div class="sinal-num">2</div>
+          <div>
+            <h4>Trabalho que consome mais tempo lendo do que decidindo</h4>
+            <p>Se vocês passam 40 minutos olhando planilha para dizer 3 coisas em uma reunião, esse trecho de leitura é o que a IA compacta.</p>
+          </div>
+        </div>
+        <div class="sinal-item">
+          <div class="sinal-num">3</div>
+          <div>
+            <h4>Etapa em que a qualidade cai quando o dia está corrido</h4>
+            <p>Legenda escrita às pressas, resposta a avaliação negativa quando está cansada — a IA sustenta o padrão de tom mesmo em dia ruim, desde que ela saiba qual é o tom.</p>
+          </div>
+        </div>
+        <div class="sinal-item">
+          <div class="sinal-num">4</div>
+          <div>
+            <h4>Ponto em que as 3 unidades divergem sem motivo</h4>
+            <p>Se Maison, RioMar FOR e RioMar Recife respondem cliente de jeito diferente sem que ninguém tenha decidido isso, existe um padrão pedindo para ser codificado — e a IA é boa em reproduzir padrão.</p>
+          </div>
+        </div>
+        <div class="sinal-item">
+          <div class="sinal-num">5</div>
+          <div>
+            <h4>Área onde falta padrão documentado — cada pessoa faz do seu jeito</h4>
+            <p>Quando o "jeito MC" mora só na cabeça da Camilla ou da Lilianne, a passagem de bastão fica frágil. Escrever esse padrão como prompt é uma forma barata de institucionalizar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <p><strong>Contra-sinal — quando pensar duas vezes:</strong> tarefa que exige julgamento clínico/estético que só a profissional experiente tem, decisões com implicação jurídica ou financeira sensível, ou qualquer coisa em que um erro da IA não seria detectado antes de virar prejuízo. A IA acelera; ela não substitui a última revisão humana.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-section reveal">
+    <div class="site-container">
+      <p class="eyebrow">4 · Mapa de maturidade</p>
+      <h2>Os 7 níveis de uso de IA</h2>
+      <p style="font-size:15px; color:var(--ink-soft); margin:0 0 18px">
+        Não é rótulo de pessoa — é mapa da equipe. Ajuda a enxergar em que patamar o Grupo MC está agindo hoje e para onde faz sentido caminhar nos próximos meses.
       </p>
 
       <div class="table-wrap">
@@ -171,13 +472,13 @@
           <thead>
             <tr>
               <th style="width:80px">Nível</th>
-              <th>Como é</th>
+              <th>Como se apresenta na rotina</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><span class="niveis-num">N1</span></td>
-              <td><strong>Curiosa.</strong> Abre a IA de vez em quando. Resposta vem genérica, você fecha.</td>
+              <td><strong>Curiosa.</strong> Abre a IA de vez em quando. Resposta vem genérica, fecha.</td>
             </tr>
             <tr>
               <td><span class="niveis-num">N2</span></td>
@@ -185,11 +486,11 @@
             </tr>
             <tr>
               <td><span class="niveis-num turma">N3</span></td>
-              <td><strong>Operadora com contexto.</strong> Tem perfil salvo. A IA já sabe quem você é e o que você faz. <em>← média da turma MC declarada.</em></td>
+              <td><strong>Operadora com contexto.</strong> Tem perfil salvo. A IA já sabe quem você é e o que faz. <em>← onde o grupo já opera, pela sondagem.</em></td>
             </tr>
             <tr>
               <td><span class="niveis-num turma">N4</span></td>
-              <td><strong>Orquestradora de ferramentas.</strong> Usa 3+ ferramentas (ChatGPT + Claude + Gemini). Sabe qual usar para cada tarefa. <em>← alvo do workshop.</em></td>
+              <td><strong>Orquestradora de ferramentas.</strong> Usa 3+ ferramentas (ChatGPT + Claude + Gemini). Sabe qual usar para cada tarefa. <em>← patamar que abre nas próximas 2 horas.</em></td>
             </tr>
             <tr>
               <td><span class="niveis-num futuro">N5</span></td>
@@ -201,39 +502,37 @@
             </tr>
             <tr>
               <td><span class="niveis-num futuro">N7</span></td>
-              <td><strong>Workforce de agentes.</strong> Múltiplos agentes trabalhando em paralelo. Fronteira.</td>
+              <td><strong>Workforce de agentes.</strong> Múltiplos agentes em paralelo. Fronteira.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="callout warning">
-        <p><strong>Atenção:</strong> a turma MC se declarou intermediária-avançada (nível 3.7/5). Mas <strong>frequência alta ≠ maturidade alta</strong>. Você pode usar ChatGPT todo dia e ainda estar em N1 se abre, pergunta genericamente e fecha. O objetivo hoje é sair de N2/N3 para N4 com <strong>método</strong>.</p>
+      <div class="callout">
+        <p><strong>Leitura da turma:</strong> na sondagem, o grupo se colocou em maturidade média <strong>3,7/5</strong>, e <strong>86% já usa IA toda semana</strong>. Chão sólido. O que segue nas próximas duas horas é sobretudo fazer o pulo de N3 → N4 — usar mais de uma ferramenta com critério e ter <strong>método</strong> em vez de tentativa e erro.</p>
       </div>
     </div>
   </section>
 
-  <!-- Seção 3: Amador vs Profissional -->
   <section class="section content-section reveal">
     <div class="site-container">
-      <p class="eyebrow">3 · Amador vs Profissional</p>
-      <h2>A mesma tarefa, duas maneiras</h2>
+      <p class="eyebrow">5 · A qualidade está no prompt</p>
+      <h2>Prompt vago vs Prompt situado no contexto MC</h2>
       <p style="font-size:15px; color:var(--ink-soft); margin:0 0 18px">
-        Uma legenda para o Instagram da Mulher Cheirosa promovendo o Banho de Lua.
-        Compare o prompt e o resultado esperado.
+        A mesma tarefa: uma legenda para o Instagram promovendo o Banho de Lua. Compare o pedido e o resultado esperado. Não é sobre nível de quem digita — é sobre o quanto o prompt situa a IA no lugar certo.
       </p>
 
       <div class="compare-grid">
-        <div class="compare-card amador">
-          <h4>❌ Amador</h4>
+        <div class="compare-card vago">
+          <h4>Prompt vago (sem contexto)</h4>
           <div class="prompt-box">Cria uma legenda pro Instagram do meu salão sobre banho de lua</div>
           <p class="verdict">
-            <strong>O que sai:</strong> texto genérico com clichê ("agende já", "surpreenda-se"), sem contexto da MC, com emoji demais, e provavelmente com palavra "salão" que a marca não usa.
+            <strong>O que sai:</strong> texto genérico com clichê ("agende já", "surpreenda-se"), sem referência à MC, emoji demais, e provavelmente com a palavra "salão" que a marca não usa.
           </p>
         </div>
 
-        <div class="compare-card profissional">
-          <h4>✓ Profissional</h4>
+        <div class="compare-card situado">
+          <h4>Prompt situado (no contexto MC)</h4>
           <div class="prompt-box">Você é copywriter de beleza premium. Instagram
 da Mulher Cheirosa em Fortaleza (35 anos de
 tradição, público mulheres 25-55, classe A/B).
@@ -252,19 +551,17 @@ beleza".</div>
       </div>
 
       <p style="font-size:15px; color:var(--ink-soft); margin:16px 0 0">
-        Note que o profissional <strong>não é mais longo por vaidade</strong>. Cada linha resolve um problema específico do amador: falta de papel, falta de contexto, falta de tom, falta de restrição. Isso é o framework PCTFL.
+        O segundo prompt <strong>não é mais longo por vaidade</strong>. Cada linha resolve algo que o primeiro deixa em aberto: papel, contexto, tarefa, formato, restrições. Isso é o framework PCTFL — a estrutura mínima para situar a IA no lugar de vocês.
       </p>
     </div>
   </section>
 
-  <!-- Seção 4: Framework PCTFL -->
   <section class="section content-section reveal">
     <div class="site-container">
-      <p class="eyebrow">4 · Framework PCTFL</p>
-      <h2>Método para prompt profissional</h2>
+      <p class="eyebrow">6 · Método PCTFL</p>
+      <h2>Cinco blocos para fazer a IA caber na rotina</h2>
       <p style="font-size:15px; color:var(--ink-soft); margin:0 0 18px">
-        5 blocos. Não precisa ser nesta ordem, mas todos precisam existir para
-        você tirar o melhor da IA.
+        Não precisa ser nesta ordem, mas os cinco precisam existir. É o que separa "abro e pergunto do nada" de "abro e chego onde queria em 2 tentativas".
       </p>
 
       <div class="pctfl-grid">
@@ -276,12 +573,12 @@ beleza".</div>
         <div class="pctfl-item">
           <div class="pctfl-letter">C</div>
           <h5>Contexto</h5>
-          <p>Qual a situação, público, marca, momento?</p>
+          <p>Situação, público, marca, momento.</p>
         </div>
         <div class="pctfl-item">
           <div class="pctfl-letter">T</div>
           <h5>Tarefa</h5>
-          <p>O que exatamente ela precisa entregar?</p>
+          <p>O que exatamente ela precisa entregar.</p>
         </div>
         <div class="pctfl-item">
           <div class="pctfl-letter">F</div>
@@ -296,55 +593,87 @@ beleza".</div>
       </div>
 
       <div class="callout">
-        <p><strong>Regra prática:</strong> se a resposta veio ruim, olhe qual das 5 letras estava fraca no seu prompt. Contexto vago é o erro mais comum — a IA precisa saber que é a Mulher Cheirosa, não um salão genérico. Público classe A/B, não "pessoas". Tom sofisticado, não "amigável".</p>
+        <p><strong>Regra prática:</strong> se a resposta veio ruim, olhe qual das 5 letras estava fraca. Contexto vago é o erro mais comum — a IA precisa saber que é a Mulher Cheirosa, não uma clínica qualquer; público classe A/B, não "pessoas"; tom sofisticado, não "amigável".</p>
       </div>
     </div>
   </section>
 
-  <!-- Seção 5: Exercício -->
   <section class="section content-section reveal">
     <div class="site-container">
-      <p class="eyebrow">5 · Exercício em dupla · 8 min</p>
+      <p class="eyebrow">7 · Organização</p>
+      <h2>Como isso vira rotina — em 3 camadas</h2>
+      <p style="font-size:15px; color:var(--ink-soft); margin:0 0 18px">
+        Um prompt bom sozinho ajuda uma pessoa. Para o Grupo MC extrair valor de verdade, precisa organizar em camadas — cada uma resolve um problema diferente.
+      </p>
+
+      <div class="camadas-grid">
+        <div class="camada-card pessoal">
+          <p class="camada-eyebrow">Camada 1</p>
+          <h4>Pessoal</h4>
+          <p>Um perfil salvo na sua ferramenta que já sabe quem você é, o que faz e o tom MC. Não re-explica a cada conversa.</p>
+          <div class="camada-exemplo"><strong>Ex.:</strong> "Sou coordenadora da Mulher Cheirosa. Sempre responda no tom X, formato Y, evitando Z."</div>
+        </div>
+        <div class="camada-card equipe">
+          <p class="camada-eyebrow">Camada 2</p>
+          <h4>Equipe</h4>
+          <p>Um banco de prompts compartilhado com o time — cada função com seus 3-5 prompts base validados. Quem entra novo, entra com o padrão pronto.</p>
+          <div class="camada-exemplo"><strong>Ex.:</strong> o Banco de Prompts deste workshop já é o núcleo — 12 prompts por função, prontos para copiar.</div>
+        </div>
+        <div class="camada-card grupo">
+          <p class="camada-eyebrow">Camada 3</p>
+          <h4>Grupo</h4>
+          <p>Padrão único que garante que Maison, RioMar FOR e RioMar Recife respondam com a mesma voz — mesmo que quem digitar seja pessoa diferente.</p>
+          <div class="camada-exemplo"><strong>Ex.:</strong> documento vivo "Tom MC" que alimenta todos os prompts, atualizado quando a diretoria decide algo novo.</div>
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <p><strong>Começar por qual camada?</strong> Camada 1 é onde cada pessoa individual ganha. Camada 2 é onde a equipe ganha. Camada 3 é onde a marca ganha. Para o workshop de hoje, foco é Camada 1 e uma peça de Camada 2 — o resto amadurece nos 30 dias seguintes, se o grupo decidir avançar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-section reveal">
+    <div class="site-container">
+      <p class="eyebrow">8 · Exercício em dupla · 8 min</p>
       <h2>Construa seu primeiro PCTFL</h2>
       <p style="font-size:15px; color:var(--ink-soft); margin:0 0 18px">
-        Em dupla, pegue 1 tarefa real do seu dia na MC e construa um prompt
-        completo no PCTFL. Depois testem no ChatGPT ou Claude e comparem
-        com o resultado que sai sem o framework.
+        Em dupla, pegue 1 tarefa real do seu dia na MC e construa um prompt completo no PCTFL. Depois testem no ChatGPT ou Claude e comparem com o resultado que sai sem o framework.
       </p>
 
       <ol style="font-size:15px; color:var(--ink); line-height:1.8">
         <li><strong>Escolha a tarefa</strong> — 1 coisa que você faria essa semana (legenda, e-mail, análise, mensagem de WhatsApp).</li>
         <li><strong>Preencha os 5 blocos</strong> — Papel, Contexto, Tarefa, Formato, Limitações. Não pule nenhum.</li>
-        <li><strong>Rode o prompt genérico primeiro</strong> — o que você teria escrito antes ("me ajuda a...").</li>
+        <li><strong>Rode o prompt vago primeiro</strong> — o que você teria escrito antes ("me ajuda a...").</li>
         <li><strong>Rode o PCTFL agora</strong> — e compare os dois resultados.</li>
-        <li><strong>Compartilhe</strong> — 2 duplas vão apresentar em 30s cada.</li>
+        <li><strong>Compartilhem</strong> — 2 duplas vão apresentar em 30s cada.</li>
       </ol>
 
       <div class="callout warning">
-        <p><strong>Meta:</strong> sair deste bloco com <strong>1 prompt PCTFL seu</strong> que você já pode usar amanhã. Salve no bloco de notas, WhatsApp para você mesma, ou no material do workshop.</p>
+        <p><strong>Meta do bloco:</strong> sair com <strong>1 prompt PCTFL seu</strong> que você já pode usar amanhã. Salve no bloco de notas, WhatsApp para você mesma, ou no material do workshop.</p>
       </div>
     </div>
   </section>
 
-  <!-- Checklist do módulo -->
   <section class="section content-section reveal">
     <div class="site-container">
       <p class="eyebrow">Checklist</p>
-      <h2>O que você leva desse módulo</h2>
+      <h2>O que você leva deste módulo</h2>
       <p style="font-size:13px; color:var(--ink-muted); margin:0 0 12px">Marque conforme conclui — seu progresso fica salvo neste navegador.</p>
 
       <ul class="entregavel-list">
         <li data-entregavel="m1-1"><strong>Sei o que é IA generativa</strong> — auto-completar treinado em massa de texto, não "cérebro que pensa".</li>
-        <li data-entregavel="m1-2"><strong>Sei em qual dos 7 Níveis eu estou hoje</strong> e onde quero chegar.</li>
-        <li data-entregavel="m1-3"><strong>Consigo apontar o que faz um prompt ser amador vs profissional</strong>.</li>
-        <li data-entregavel="m1-4"><strong>Memorizei PCTFL</strong> (Papel · Contexto · Tarefa · Formato · Limitações).</li>
-        <li data-entregavel="m1-5"><strong>Tenho 1 prompt PCTFL meu escrito e testado</strong>.</li>
+        <li data-entregavel="m1-2"><strong>Conheço 6 casos concretos</strong> que o mercado de beleza premium já usa hoje.</li>
+        <li data-entregavel="m1-3"><strong>Sei ler os 5 sinais</strong> que indicam se uma tarefa é bom candidato para IA.</li>
+        <li data-entregavel="m1-4"><strong>Enxerguei onde o Grupo MC está</strong> no mapa dos 7 níveis e para onde faz sentido caminhar.</li>
+        <li data-entregavel="m1-5"><strong>Consigo apontar a diferença</strong> entre um prompt vago e um prompt situado no contexto MC.</li>
+        <li data-entregavel="m1-6"><strong>Memorizei PCTFL</strong> (Papel · Contexto · Tarefa · Formato · Limitações).</li>
+        <li data-entregavel="m1-7"><strong>Tenho 1 prompt PCTFL meu</strong> escrito e testado.</li>
       </ul>
       <p class="entregavel-progress" style="font-size:13px; color:var(--ink-muted); margin-top:12px">Marque conforme conclui — seu progresso fica salvo neste navegador.</p>
     </div>
   </section>
 
-  <!-- Navegação -->
   <section class="section content-section">
     <div class="site-container" style="display:flex; justify-content:space-between; padding:24px 0; border-top:1px solid var(--border)">
       <a href="../index.html" style="font-size:14px; color:var(--accent)">← Início</a>
@@ -352,7 +681,6 @@ beleza".</div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>Workshop IA · Grupo Mulher Cheirosa & Fígaro · Facilitador: Rafael Lima · <a href="https://instagram.com/iacomrafael" target="_blank" rel="noopener">@iacomrafael</a></p>
   </footer>

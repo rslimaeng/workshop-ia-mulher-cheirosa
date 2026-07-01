@@ -12,8 +12,8 @@ função e artefatos de exercício.
 
 | Página | Conteúdo |
 |---|---|
-| Home | Diagnóstico da turma + navegação para os 3 módulos |
-| M1 · Fundamentos | Amador vs Profissional · Os 7 Níveis · Framework PCTFL |
+| Home | Diagnóstico do grupo + navegação para os 3 módulos |
+| M1 · Fundamentos | Mercado premium · Sinais para olhar · 7 níveis · PCTFL · 3 camadas |
 | M2 · Gestão | Análise de vendas · Cross-sell · Relatório executivo |
 | M3 · Comunicação | Legendas · WhatsApp · Resposta a avaliação |
 | Banco de Prompts | 12 prompts PCTFL prontos para copiar |
