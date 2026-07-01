@@ -128,7 +128,7 @@
     <p class="eyebrow">Exercícios</p>
     <h1>Artefatos para Download</h1>
     <div class="module-header-meta">
-      <span>3 recortes de dados fictícios da MC</span>
+      <span>3 pares de arquivos xlsx (M2) + 1 avaliação (M3)</span>
       <span>·</span>
       <span>Para praticar os exercícios do workshop</span>
     </div>
@@ -141,96 +141,83 @@
       pessoas ou casos reais da Mulher Cheirosa.</p>
     </div>
 
+    <!-- ARQUIVOS xlsx do M2 -->
+    <section class="reveal" style="margin: 32px 0 40px">
+      <p class="eyebrow" style="color:var(--accent); font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; margin: 0 0 4px">Para o M2 · IA para Gestão</p>
+      <h2 style="font-family:var(--serif); font-size:26px; color:var(--ink); margin:0 0 8px">3 pares de arquivos xlsx</h2>
+      <p style="font-size:14.5px; color:var(--ink-soft); margin:0 0 20px">
+        Cada caso tem <strong>2 versões</strong>: uma limpa e uma com anomalias plantadas. Rode
+        o mesmo prompt (que está na aba "Como usar com IA" de cada arquivo, ou copie do
+        <a href="../m2/index.html">M2</a>) nas duas versões e compare os outputs.
+      </p>
+
+      <div class="arquivos-grid">
+        <div class="arquivo-card">
+          <p class="arquivo-num">Arquivo 1 · Caso 1 do M2</p>
+          <h4>Vendas das 3 unidades — Junho/2026</h4>
+          <p class="arquivo-desc">185 vendas de jun/26 (Maison Aldeota · RioMar Papicu · RioMar Recife). 3 abas + aba com prompt PCTFL pronto.</p>
+          <div class="arquivo-tags">
+            <span>3 abas + prompt</span>
+            <span>Análise comparativa</span>
+          </div>
+          <div class="arquivo-btns">
+            <a href="../m2/exemplos/01a-vendas-3-unidades-jun26-limpo.xlsx" download class="arquivo-btn primary">↓ Versão limpa</a>
+            <a href="../m2/exemplos/01b-vendas-3-unidades-jun26-com-anomalias.xlsx" download class="arquivo-btn ghost">↓ Com anomalias</a>
+          </div>
+        </div>
+
+        <div class="arquivo-card">
+          <p class="arquivo-num">Arquivo 2 · Caso 2 do M2</p>
+          <h4>Base de clientes — 2º trim/2026</h4>
+          <p class="arquivo-desc">100 clientes anonimizados. Aba "Só Banho de Lua" já isola o target primário do cross-sell.</p>
+          <div class="arquivo-tags">
+            <span>3 abas + prompt</span>
+            <span>Cross-sell</span>
+          </div>
+          <div class="arquivo-btns">
+            <a href="../m2/exemplos/02a-base-clientes-cross-sell-limpo.xlsx" download class="arquivo-btn primary">↓ Versão limpa</a>
+            <a href="../m2/exemplos/02b-base-clientes-cross-sell-com-anomalias.xlsx" download class="arquivo-btn ghost">↓ Com anomalias</a>
+          </div>
+        </div>
+
+        <div class="arquivo-card">
+          <p class="arquivo-num">Arquivo 3 · Caso 3 do M2</p>
+          <h4>Dados executivo — Junho/2026</h4>
+          <p class="arquivo-desc">Métricas mai vs jun das 3 unidades + 16 anotações qualitativas (elogios, reclamações, alertas). Base para o relatório executivo de 1 página.</p>
+          <div class="arquivo-tags">
+            <span>2 abas + prompt</span>
+            <span>Relatório executivo</span>
+          </div>
+          <div class="arquivo-btns">
+            <a href="../m2/exemplos/03a-dados-executivo-jun26-limpo.xlsx" download class="arquivo-btn primary">↓ Versão limpa</a>
+            <a href="../m2/exemplos/03b-dados-executivo-jun26-com-anomalias.xlsx" download class="arquivo-btn ghost">↓ Com anomalias</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="arquivos-como-usar">
+        <strong>Por que 2 versões?</strong>
+        <ol>
+          <li>Versão LIMPA — treina como a IA analisa dado "bom" e que padrões ela identifica</li>
+          <li>Versão COM ANOMALIAS — testa se a IA detecta erro (valor negativo, data impossível, valor 10× acima) antes de gerar análise contaminada</li>
+          <li>Meta didática: <strong>ver a mesma IA acertando e falhando dependendo da qualidade do dado</strong> — reforça que revisão humana continua sendo sua responsabilidade</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ARTEFATO M3 -->
+    <section class="reveal" style="margin: 40px 0 24px">
+      <p class="eyebrow" style="color:var(--accent); font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; margin: 0 0 4px">Para o M3 · IA para Comunicação</p>
+      <h2 style="font-family:var(--serif); font-size:26px; color:var(--ink); margin:0 0 8px">1 avaliação negativa para responder</h2>
+    </section>
+
     <div class="artefato-list">
 
-      <!-- ARTEFATO 1 -->
+      <!-- ARTEFATO M3 -->
       <div class="artefato-card">
         <div class="artefato-header">
           <div>
-            <h3 class="artefato-title">1 · Vendas por Unidade — Junho/2026</h3>
-            <p class="artefato-desc">Recorte de dados fictícios para exercício do M2 · Caso 1 (análise comparativa entre unidades).</p>
-          </div>
-          <span class="artefato-tag">Para M2</span>
-        </div>
-        <div class="artefato-body" id="a1">Grupo Mulher Cheirosa — Consolidado Junho/2026 (dados fictícios)
-
-MAISON ALDEOTA (Fortaleza)
-- Faturamento: R$ 187.400
-- Ticket médio: R$ 380
-- Nº de atendimentos: 493
-- Taxa de retorno em 30 dias: 62%
-- Mix top 3: Banho de Lua (28%), Cronograma Capilar (19%), Cortes (17%)
-- Serviço em queda: Depilação (-14% vs maio)
-
-RIOMAR PAPICU (Fortaleza)
-- Faturamento: R$ 224.800
-- Ticket médio: R$ 265
-- Nº de atendimentos: 848
-- Taxa de retorno em 30 dias: 38%
-- Mix top 3: Cortes (26%), Unhas (22%), Maquiagem (16%)
-- Serviço em queda: Micropigmentação (-8% vs maio)
-
-RIOMAR RECIFE (Pernambuco)
-- Faturamento: R$ 156.200
-- Ticket médio: R$ 298
-- Nº de atendimentos: 524
-- Taxa de retorno em 30 dias: 44%
-- Mix top 3: Banho de Lua (24%), Cortes (21%), Unhas (18%)
-- Serviço em queda: Cronograma Capilar (-11% vs maio)
-
-Comparativo vs Junho/2025:
-- Maison: +8% faturamento, +5% ticket
-- RioMar FOR: +12% faturamento, -3% ticket
-- RioMar Recife: +22% faturamento, +9% ticket</div>
-        <div class="artefato-actions">
-          <button class="copy-btn" data-copy="a1">Copiar dados</button>
-          <a href="downloads/vendas-junho-2026.txt" download class="download-btn">↓ Baixar .txt</a>
-        </div>
-        <p class="como-usar"><strong>Como usar:</strong> abra o <a href="../m2/index.html">M2 · Caso 1</a>, copie o prompt, cole os dados acima onde o prompt indica <code>[cole os dados aqui]</code>, e rode no ChatGPT ou Claude.</p>
-      </div>
-
-      <!-- ARTEFATO 2 -->
-      <div class="artefato-card">
-        <div class="artefato-header">
-          <div>
-            <h3 class="artefato-title">2 · Base de Clientes Banho de Lua — Q2/2026</h3>
-            <p class="artefato-desc">Recorte fictício para exercício do M2 · Caso 2 (cross-sell). Iniciais anônimas.</p>
-          </div>
-          <span class="artefato-tag">Para M2</span>
-        </div>
-        <div class="artefato-body" id="a2">Clientes Banho de Lua — abril a junho/2026 (dados fictícios)
-
-Cliente | Idade | Unidade | Freq. últimos 3m | Ticket médio | Outros serviços 12m
---------|-------|---------|------------------|--------------|--------------------
-M.V.C.  | 42    | Maison  | 3                | R$ 420       | Cronograma Capilar, Micropigmentação
-A.R.L.  | 28    | Maison  | 2                | R$ 380       | -
-F.M.S.  | 35    | RioMar F| 2                | R$ 350       | Cortes
-J.P.N.  | 51    | Maison  | 3                | R$ 460       | Cronograma, Estética Facial
-C.R.O.  | 26    | RioMar F| 1                | R$ 320       | Maquiagem para eventos
-L.B.T.  | 44    | Maison  | 3                | R$ 490       | Cronograma, Micropigmentação
-R.A.M.  | 32    | RioMar R| 2                | R$ 340       | Cortes, Unhas
-S.G.P.  | 38    | Maison  | 2                | R$ 400       | -
-V.K.D.  | 29    | RioMar R| 1                | R$ 310       | Unhas
-T.M.C.  | 47    | Maison  | 3                | R$ 450       | Cronograma, Estética Facial
-B.O.H.  | 33    | RioMar F| 2                | R$ 360       | Maquiagem para eventos
-G.E.F.  | 41    | Maison  | 2                | R$ 410       | Cortes, Cronograma
-N.S.A.  | 25    | RioMar F| 1                | R$ 300       | Unhas
-P.R.Q.  | 52    | Maison  | 3                | R$ 480       | Cronograma, Micropigmentação, Estética
-D.L.V.  | 30    | RioMar R| 2                | R$ 330       | Cortes
-
-Total: 15 clientes | Idade média: 37 | Ticket médio agregado: R$ 393</div>
-        <div class="artefato-actions">
-          <button class="copy-btn" data-copy="a2">Copiar dados</button>
-          <a href="downloads/clientes-banho-de-lua-q2-2026.txt" download class="download-btn">↓ Baixar .txt</a>
-        </div>
-        <p class="como-usar"><strong>Como usar:</strong> abra o <a href="../m2/index.html">M2 · Caso 2</a>, copie o prompt, cole os dados acima onde indicado, e peça análise de cross-sell para Spa da Noiva ou Cronograma Capilar.</p>
-      </div>
-
-      <!-- ARTEFATO 3 -->
-      <div class="artefato-card">
-        <div class="artefato-header">
-          <div>
-            <h3 class="artefato-title">3 · Avaliação Negativa — Google Reviews</h3>
+            <h3 class="artefato-title">Avaliação Negativa — Google Reviews</h3>
             <p class="artefato-desc">Avaliação fictícia para exercício do M3 · Caso 3 (resposta com elegância).</p>
           </div>
           <span class="artefato-tag">Para M3</span>
@@ -258,9 +245,10 @@ Provavelmente não volto."</div>
     <div class="callout">
       <p><strong>Sugestão de sequência para o workshop:</strong></p>
       <ol style="margin-top:10px; margin-bottom:0">
-        <li>M2 · Caso 1 com <strong>Artefato 1</strong> (vendas por unidade)</li>
-        <li>M2 · Caso 2 com <strong>Artefato 2</strong> (base de clientes)</li>
-        <li>M3 · Caso 3 com <strong>Artefato 3</strong> (avaliação negativa)</li>
+        <li>M2 · Caso 1 com <strong>Arquivo 1</strong> (vendas 3 unidades) — rodar nas 2 versões e comparar</li>
+        <li>M2 · Caso 2 com <strong>Arquivo 2</strong> (base de clientes) — mesmo padrão</li>
+        <li>M2 · Caso 3 com <strong>Arquivo 3</strong> (dados executivo) — relatório de 1 página</li>
+        <li>M3 · Caso 3 com a <strong>avaliação negativa</strong> — copiar texto e produzir resposta pública</li>
       </ol>
     </div>
   </div>

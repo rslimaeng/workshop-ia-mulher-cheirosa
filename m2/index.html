@@ -133,6 +133,35 @@
 
   <section class="section content-section reveal">
     <div class="site-container">
+      <p class="eyebrow">Pra praticar do seu jeito</p>
+      <h2>3 pares de arquivos MC pra você rodar na sua IA</h2>
+      <p style="font-size:15px; color:var(--ink-soft); margin:0 0 16px">
+        Cada caso deste bloco vem com <strong>2 versões do mesmo arquivo</strong> — uma
+        <strong>limpa</strong> e uma <strong>com anomalias plantadas</strong> (valor
+        negativo, data impossível, valor 10× acima do esperado, etc.). Você roda o
+        <strong>mesmo prompt</strong> nas duas e compara o output.
+      </p>
+
+      <div class="arquivos-como-usar">
+        <strong>Por que 2 versões?</strong>
+        <ol>
+          <li>Ver como a IA analisa dado "bom" — que padrões ela identifica</li>
+          <li>Ver se ela detecta os erros na versão suja — e principalmente <strong>como</strong> ela alerta você (ou não)</li>
+          <li>Reforçar a regra de ouro: <strong>IA é copiloto, revisão humana continua sendo sua</strong></li>
+        </ol>
+      </div>
+
+      <div class="callout warning">
+        <p><strong>Como rodar:</strong> abra ChatGPT, Claude ou Gemini (versão paga aceita
+        upload direto de .xlsx — a gratuita pode pedir pra colar recorte). Anexe o arquivo,
+        cole o prompt, veja o output. Depois troque só o arquivo (versão B) e rode de novo.
+        <strong>Prompt idêntico. Arquivo diferente. Compare.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-section reveal">
+    <div class="site-container">
       <p class="eyebrow">Caso 1 · Análise de vendas</p>
       <h2>Comparar desempenho das 3 unidades</h2>
       <p style="font-size:15px; color:var(--ink-soft); margin:0 0 16px">
@@ -141,47 +170,68 @@
         de escrita. Com IA + PCTFL, 10 minutos.
       </p>
 
-      <div class="case-list">
-        <div class="case-card">
-          <h3><span class="case-num">1</span> Prompt PCTFL para análise comparativa</h3>
-          <p class="case-desc">Cole seu recorte de dados (sem informações confidenciais). O prompt já vem estruturado:</p>
-          <div class="prompt-box">Papel: Você é um consultor de operações de rede
-de serviços premium.
-
-Contexto: Trabalho na Mulher Cheirosa. Temos
-3 unidades: Maison Aldeota (FOR, tradicional,
-rua desde 1987), RioMar Papicu (FOR, shopping)
-e RioMar Recife (PE, shopping). Cada uma tem
-perfil de cliente diferente.
-
-Tarefa: Com base nos dados abaixo:
-1. Compare as 3 unidades em ticket médio, mix
-   de serviços e frequência de retorno
-2. Identifique qual unidade performa melhor em
-   cada dimensão
-3. Sugira 1 hipótese sobre a diferença
-4. Recomende 2 ações específicas para a
-   unidade de pior desempenho
-
-Dados: [cole o recorte da planilha aqui]
-
-Formato:
-- Tabela comparativa
-- Ranking por dimensão
-- Hipótese em 1 parágrafo
-- Ações com responsável e prazo
-
-Limitações: Considere que Maison é rua desde
-1987 (base fiel), RioMar são shopping (fluxo
-maior de passagem). Não compare como se fossem
-operações idênticas. Não invente números.</div>
-          <p class="outcome">
-            <strong>O que sai:</strong> análise estruturada em formato de reunião, com hipóteses
-            explicadas e ações prontas para virar tarefa. Você chega na reunião com
-            interpretação, não com planilha crua.
-          </p>
+      <div class="arquivos-grid">
+        <div class="arquivo-card">
+          <p class="arquivo-num">Arquivo 1 · 2 versões · Excel</p>
+          <h4>Vendas das 3 unidades — Junho/2026</h4>
+          <p class="arquivo-desc">185 vendas de jun/26 nas 3 unidades. 3 abas: Vendas detalhadas · Resumo por Unidade · Mix de Serviços. Aba extra com o prompt PCTFL pronto.</p>
+          <div class="arquivo-tags">
+            <span>3 abas + prompt</span>
+            <span>Anonimizado</span>
+          </div>
+          <div class="arquivo-btns">
+            <a href="exemplos/01a-vendas-3-unidades-jun26-limpo.xlsx" download class="arquivo-btn primary">↓ Versão limpa</a>
+            <a href="exemplos/01b-vendas-3-unidades-jun26-com-anomalias.xlsx" download class="arquivo-btn ghost">↓ Com anomalias</a>
+          </div>
         </div>
       </div>
+
+      <div class="prompt-unico">
+        <div class="prompt-unico-head">
+          <h4>Prompt PCTFL — rode nas 2 versões</h4>
+          <span class="prompt-unico-tag">Mesmo prompt · Arquivos diferentes</span>
+        </div>
+        <div class="prompt-unico-body" id="prompt-caso1">Papel: Você é um consultor sênior de operações de rede de serviços premium, com experiência em clínicas de beleza multiunidade.
+
+Contexto: Trabalho no Grupo Mulher Cheirosa &amp; Fígaro. Temos 3 unidades: Maison Aldeota (Fortaleza, rua, tradicional desde 1987, clientela fiel, ticket mais alto), RioMar Papicu (Fortaleza, shopping, volume alto e ticket médio), e RioMar Recife (unidade mais nova em Pernambuco, em crescimento). Cada uma tem perfil de cliente diferente. Estou preparando reunião mensal com a Lilianne Veloso (diretora). Preciso apresentar o resultado de junho/2026 de forma estruturada.
+
+Tarefa: Com base nos dados do arquivo anexado (abas Vendas, Resumo por Unidade e Mix de Serviços):
+
+1. RELATÓRIO EXECUTIVO — 1 página, 3 blocos:
+   a) Resumo do mês (2-3 linhas)
+   b) Tabela comparativa das 3 unidades: faturamento, ticket médio, volume, top 3 serviços
+   c) Ranking por dimensão (fatur., ticket médio, volume) — quem lidera cada uma
+
+2. ANÁLISE E HIPÓTESES:
+   - 3 padrões que você identificou olhando o mix de serviços × unidade
+   - 1 hipótese sobre por que uma unidade performa diferente da outra (considerando os perfis: rua × shopping × cidade nova)
+   - Anomalias ou dados suspeitos que você encontrou — descreva cada um com a linha exata e por que parece anômalo
+
+3. GRÁFICOS (se sua ferramenta suportar):
+   - Barras: faturamento por unidade
+   - Barras horizontais: top 5 serviços do mês (volume total)
+   - Pizza: distribuição de faturamento entre as 3 unidades
+
+4. RECOMENDAÇÕES ACIONÁVEIS:
+   - 2 ações concretas para a unidade de pior desempenho relativo (com responsável sugerido e prazo)
+   - 1 oportunidade de cross-sell entre serviços (que serviço puxa qual)
+
+Formato: use tabelas markdown. Cabeçalhos em negrito. Números em R$ com 2 casas. Datas dd/mm/aaaa.
+
+Limitações:
+- Não invente números que não estão nos dados
+- Se encontrar dados que parecem erro (valor negativo, data impossível, valor muito acima da média, unidade escrita de forma inconsistente), NÃO tente corrigir sozinho — LISTE como "pontos de atenção" e me pergunte antes
+- Não trate Maison como se fosse igual às RioMar — perfis são muito diferentes (rua vs shopping, público tradicional vs passagem)
+- Considere que Maison é a base fiel da marca desde 1987</div>
+        <div class="prompt-unico-actions">
+          <button class="prompt-unico-btn" data-copy="prompt-caso1">Copiar prompt</button>
+          <span style="font-size:12.5px; color:var(--ink-muted); align-self:center">Rode no arquivo LIMPO primeiro. Depois no COM ANOMALIAS. Compare os outputs.</span>
+        </div>
+      </div>
+
+      <p style="font-size:13.5px; color:var(--ink-muted); margin:16px 0 0; padding:12px 16px; background:var(--bg-warm); border-left:3px solid var(--accent-warm); border-radius:4px">
+        <strong style="color:var(--ink)">O que sai:</strong> análise estruturada em formato de reunião, com hipóteses explicadas e ações prontas para virar tarefa. Na versão com anomalias, você deve ver a IA listar 2 ou 3 pontos de atenção nos dados <em>antes</em> de fechar a análise. Se ela não listar, refine o prompt.
+      </p>
     </div>
   </section>
 
@@ -195,47 +245,78 @@ operações idênticas. Não invente números.</div>
         A IA olha por você — se você pedir direito.
       </p>
 
-      <div class="case-list">
-        <div class="case-card">
-          <h3><span class="case-num">2</span> Prompt para identificar oportunidade de venda cruzada</h3>
-          <div class="prompt-box">Papel: Você é um analista de CRM especializado
-em clínicas de beleza premium.
-
-Contexto: Trabalho na Mulher Cheirosa. Tenho
-uma base de clientes que fizeram Banho de Lua
-no último trimestre e queria entender
-oportunidades com Spa da Noiva, Micropigmentação
-e Cronograma Capilar.
-
-Tarefa: Com base nos dados abaixo:
-1. Perfil das clientes que fizeram só Banho de
-   Lua (idade, frequência, ticket médio)
-2. Quais características apontam propensão a
-   Spa da Noiva
-3. 3 mensagens personalizadas para diferentes
-   perfis
-4. Qual segmento tem melhor custo/benefício
-   para começar
-
-Dados: [cole recorte simples: nome, idade,
-serviço, data, valor]
-
-Formato:
-- Perfil resumido
-- Tabela: perfil × propensão × justificativa
-- 3 mensagens completas
-- Recomendação em 2 linhas
-
-Limitações: Só use dados fornecidos. Não
-invente comportamentos. Mensagens no tom MC:
-sofisticado, acolhedor, feminino.</div>
-          <p class="outcome">
-            <strong>O que sai:</strong> lista curta de clientes com potencial de recompra,
-            mensagem escrita e pronta para o time de atendimento disparar. Deixa
-            a IA fazer o trabalho de garimpo — você decide a estratégia.
-          </p>
+      <div class="arquivos-grid">
+        <div class="arquivo-card">
+          <p class="arquivo-num">Arquivo 2 · 2 versões · Excel</p>
+          <h4>Base de clientes MC — 2º trim/2026</h4>
+          <p class="arquivo-desc">100 clientes fictícios (iniciais anonimizadas) com idade, serviços realizados, visitas, ticket total e unidade preferencial. 3 abas: Clientes · Só Banho de Lua (target primário) · Resumo.</p>
+          <div class="arquivo-tags">
+            <span>3 abas + prompt</span>
+            <span>Iniciais anonimizadas</span>
+          </div>
+          <div class="arquivo-btns">
+            <a href="exemplos/02a-base-clientes-cross-sell-limpo.xlsx" download class="arquivo-btn primary">↓ Versão limpa</a>
+            <a href="exemplos/02b-base-clientes-cross-sell-com-anomalias.xlsx" download class="arquivo-btn ghost">↓ Com anomalias</a>
+          </div>
         </div>
       </div>
+
+      <div class="prompt-unico">
+        <div class="prompt-unico-head">
+          <h4>Prompt PCTFL — rode nas 2 versões</h4>
+          <span class="prompt-unico-tag">Mesmo prompt · Arquivos diferentes</span>
+        </div>
+        <div class="prompt-unico-body" id="prompt-caso2">Papel: Você é um analista de CRM sênior especializado em clínicas de beleza premium, com foco em ativação de base e cross-sell.
+
+Contexto: Trabalho no Grupo Mulher Cheirosa &amp; Fígaro. Marca de 35 anos, público feminino 30-60 anos, sofisticado e acolhedor. Nosso portfólio principal: Banho de Lua, Spa da Noiva, Cronograma Capilar, Micropigmentação, Massagem Modeladora, Design Sobrancelha + Henna, Depilação, Manicure/Pedicure Premium, Escova Premium, Terapia Capilar. Temos uma base de clientes do 2º trimestre e queremos identificar oportunidades de cross-sell — em especial, clientes que fizeram só Banho de Lua e podem ser abordadas para Spa da Noiva ou Cronograma Capilar.
+
+Tarefa: Com base nos dados do arquivo anexado (abas Clientes, Só Banho de Lua, Resumo):
+
+1. RELATÓRIO ESTRUTURADO em 4 blocos:
+
+   BLOCO 1 · Retrato da base
+   - Total de clientes, ticket médio, faturamento total do trimestre
+   - Distribuição por perfil (só Banho de Lua, cross-sell parcial, pacote noiva, recorrentes, VIP, novas)
+
+   BLOCO 2 · Análise do target primário (só Banho de Lua)
+   - Perfil médio: idade, faixa de ticket, frequência
+   - Qual característica indica maior propensão a Spa da Noiva
+   - Qual característica indica maior propensão a Cronograma Capilar
+   - Qual característica indica maior propensão a Massagem Modeladora
+
+   BLOCO 3 · 3 mensagens personalizadas (WhatsApp — tom MC: sofisticado, acolhedor, feminino, no primeiro nome fictício)
+   - Mensagem 1: cliente jovem só Banho de Lua → convidar para Spa da Noiva
+   - Mensagem 2: cliente 40+ só Banho de Lua → convidar para Cronograma Capilar
+   - Mensagem 3: cliente com &gt;2 visitas de Banho de Lua → convidar para Massagem Modeladora
+
+   BLOCO 4 · Recomendação prática
+   - Qual segmento tem melhor custo/benefício para começar a abordagem
+   - 2 linhas justificando
+
+2. GRÁFICOS (se sua ferramenta suportar):
+   - Distribuição etária das clientes de Banho de Lua
+   - Ticket médio por perfil
+   - Pizza: distribuição de clientes por unidade preferencial
+
+3. PONTOS DE ATENÇÃO:
+   - Liste qualquer registro que pareça erro ou dado inconsistente (idade impossível, data futura, valor negativo, cliente duplicada). Descreva a linha e o motivo.
+
+Formato: tabelas markdown, mensagens completas entre aspas, cabeçalhos em negrito.
+
+Limitações:
+- Use APENAS dados do arquivo. Não invente perfis nem comportamentos
+- Não use nome completo — só iniciais como está no arquivo
+- Se encontrar erro, NÃO corrija — LISTE em "pontos de atenção"
+- Mensagens no tom MC: sofisticado, acolhedor, feminino, sem gírias, sem emoji</div>
+        <div class="prompt-unico-actions">
+          <button class="prompt-unico-btn" data-copy="prompt-caso2">Copiar prompt</button>
+          <span style="font-size:12.5px; color:var(--ink-muted); align-self:center">Rode no arquivo LIMPO primeiro. Depois no COM ANOMALIAS. Compare.</span>
+        </div>
+      </div>
+
+      <p style="font-size:13.5px; color:var(--ink-muted); margin:16px 0 0; padding:12px 16px; background:var(--bg-warm); border-left:3px solid var(--accent-warm); border-radius:4px">
+        <strong style="color:var(--ink)">O que sai:</strong> lista curta de clientes com potencial de recompra + 3 mensagens de WhatsApp prontas pra o time de atendimento disparar. Na versão com anomalias, a IA deve flaggar cadastros suspeitos (idade impossível, ticket negativo, cliente duplicada) antes de fazer o cross-sell.
+      </p>
     </div>
   </section>
 
@@ -249,48 +330,80 @@ sofisticado, acolhedor, feminino.</div>
         alguém que tem 5 minutos consegue ler.
       </p>
 
-      <div class="case-list">
-        <div class="case-card">
-          <h3><span class="case-num">3</span> Prompt para relatório executivo de 1 página</h3>
-          <div class="prompt-box">Papel: Você é um analista de gestão que escreve
-relatórios executivos para diretoria de PMEs
-premium de serviços.
-
-Contexto: Sou coordenadora da Mulher Cheirosa.
-Preciso apresentar o resultado de junho para
-Lilianne Veloso em uma reunião rápida amanhã.
-Vou apresentar em 5 minutos.
-
-Tarefa: Com base nos dados brutos abaixo,
-estruture um relatório executivo de 1 página.
-Foque no que a diretoria precisa saber para
-decidir, não em detalhe operacional.
-
-Dados brutos: [cole números, situações,
-problemas]
-
-Formato:
-- Título e período
-- Resumo executivo (3 linhas: o que aconteceu,
-  resultado, o que está em risco)
-- Tabela das 3-5 métricas principais com
-  variação vs mês anterior
-- Pontos de atenção (máximo 3)
-- Recomendação ou próximos passos
-
-Tom: direto, sem rodeios. Quem lê tem 5
-minutos.
-
-Limitações: Use apenas dados fornecidos.
-Se faltar dado essencial, avise antes de
-concluir. Não invente comparações históricas.</div>
-          <p class="outcome">
-            <strong>O que sai:</strong> relatório de 1 página, formato reunião,
-            que Lilianne consegue ler no elevador subindo. Você chega preparada,
-            não apagando incêndio.
-          </p>
+      <div class="arquivos-grid">
+        <div class="arquivo-card">
+          <p class="arquivo-num">Arquivo 3 · 2 versões · Excel</p>
+          <h4>Dados executivo MC — Junho/2026</h4>
+          <p class="arquivo-desc">Aba "Métricas por Unidade" (mai vs jun das 3 unidades) + aba "Situações do Mês" com 16 anotações qualitativas do jeito que chegam na mesa da coordenadora (elogios, reclamações, operacional, conquistas, alertas).</p>
+          <div class="arquivo-tags">
+            <span>2 abas + prompt</span>
+            <span>Quant + qual</span>
+          </div>
+          <div class="arquivo-btns">
+            <a href="exemplos/03a-dados-executivo-jun26-limpo.xlsx" download class="arquivo-btn primary">↓ Versão limpa</a>
+            <a href="exemplos/03b-dados-executivo-jun26-com-anomalias.xlsx" download class="arquivo-btn ghost">↓ Com anomalias</a>
+          </div>
         </div>
       </div>
+
+      <div class="prompt-unico">
+        <div class="prompt-unico-head">
+          <h4>Prompt PCTFL — rode nas 2 versões</h4>
+          <span class="prompt-unico-tag">Mesmo prompt · Arquivos diferentes</span>
+        </div>
+        <div class="prompt-unico-body" id="prompt-caso3">Papel: Você é um analista de gestão sênior que escreve relatórios executivos para diretoria de PMEs premium de serviços.
+
+Contexto: Sou coordenadora do Grupo Mulher Cheirosa &amp; Fígaro. Preciso apresentar o resultado de junho/2026 para Lilianne Veloso (diretora) em uma reunião rápida amanhã (5 minutos). Tenho dois tipos de dado: métricas quantitativas das 3 unidades (aba 'Métricas por Unidade') e anotações qualitativas do mês (aba 'Situações do Mês' — elogios, reclamações, conquistas, questões operacionais).
+
+Tarefa: Com base nas duas abas do arquivo anexado, estruture um RELATÓRIO EXECUTIVO DE 1 PÁGINA. Foque no que a diretoria precisa saber para decidir, não em detalhe operacional.
+
+Estrutura obrigatória:
+
+1. TÍTULO + PERÍODO
+   Ex: "Relatório Executivo — Junho/2026 — Grupo MC &amp; Fígaro"
+
+2. RESUMO EXECUTIVO (3 linhas)
+   O que aconteceu · Resultado (variação vs maio) · O que está em risco/atenção
+
+3. TABELA DAS 5 MÉTRICAS PRINCIPAIS COM VARIAÇÃO % vs MAIO
+   Faturamento total (soma das 3 unidades) · Ticket médio ponderado · Volume total · NPS médio · No-show médio
+
+4. DESTAQUES POR UNIDADE (1 linha cada)
+   Maison Aldeota · RioMar Papicu · RioMar Recife
+   Cada linha: variação vs maio + 1 fato relevante extraído das situações do mês
+
+5. PONTOS DE ATENÇÃO (máximo 3, os mais críticos)
+   Extraia da aba "Situações do Mês" — o que exige decisão ou olhar da diretoria
+
+6. CONQUISTAS DO MÊS (máximo 3)
+
+7. RECOMENDAÇÃO / PRÓXIMOS PASSOS
+   1-2 sugestões acionáveis com responsável e prazo
+
+8. GRÁFICOS (se sua ferramenta suportar):
+   - Barras: faturamento por unidade (mai vs jun)
+   - Linha: NPS por unidade (mai vs jun)
+   - Barras horizontais: distribuição das situações do mês por categoria
+
+9. PONTOS DE ATENÇÃO SOBRE OS DADOS (não confundir com item 5)
+   Se você encontrar algum registro que parece erro (valor absurdamente alto, data impossível, unidade que não existe, situação duplicada), LISTE aqui separado. Não corrija sozinho — descreva e peça confirmação.
+
+Tom: direto, sem rodeios. Quem lê tem 5 minutos.
+
+Limitações:
+- Use APENAS os dados fornecidos
+- Se faltar dado essencial para uma conclusão, DIGA "dado ausente" — não invente
+- Não invente comparações históricas anteriores a maio/2026
+- Preserve iniciais e nomes exatos como estão nas anotações</div>
+        <div class="prompt-unico-actions">
+          <button class="prompt-unico-btn" data-copy="prompt-caso3">Copiar prompt</button>
+          <span style="font-size:12.5px; color:var(--ink-muted); align-self:center">Rode no arquivo LIMPO primeiro. Depois no COM ANOMALIAS. Compare.</span>
+        </div>
+      </div>
+
+      <p style="font-size:13.5px; color:var(--ink-muted); margin:16px 0 0; padding:12px 16px; background:var(--bg-warm); border-left:3px solid var(--accent-warm); border-radius:4px">
+        <strong style="color:var(--ink)">O que sai:</strong> relatório de 1 página que a Lilianne consegue ler no elevador. Você chega preparada, não apagando incêndio. Na versão com anomalias, a IA deve separar "atenção operacional" (o que exige decisão) de "atenção de dado" (o que parece erro no cadastro).
+      </p>
     </div>
   </section>
 
@@ -354,26 +467,27 @@ concluir. Não invente comparações históricas.</div>
   <section class="section content-section reveal">
     <div class="site-container">
       <p class="eyebrow">Exercício em dupla · 15 min</p>
-      <h2>Sua análise de vendas em 10 minutos</h2>
+      <h2>Rode o Caso 1 nas 2 versões e compare</h2>
       <p style="font-size:15px; color:var(--ink-soft); margin:0 0 16px">
-        Cada dupla pega o <a href="../artefatos/index.html">recorte de dados MC</a>
-        disponível na página de artefatos. Aplique o prompt do Caso 1 (análise
-        comparativa) e produza a análise executiva.
+        Cada dupla escolhe o <strong>Arquivo 1</strong> (vendas das 3 unidades). Baixa
+        as 2 versões — limpa e com anomalias. Aplica o <strong>mesmo prompt</strong>
+        nas duas. Compara o que a IA entregou.
       </p>
 
       <ol style="font-size:15px; color:var(--ink); line-height:1.8">
-        <li><strong>Baixe o recorte de dados</strong> — planilha fictícia com vendas das 3 unidades de junho.</li>
-        <li><strong>Cole no ChatGPT ou Claude</strong> — junto com o prompt do Caso 1.</li>
-        <li><strong>Leia o resultado</strong> — o que a IA identificou? Faz sentido? Onde está fraco?</li>
-        <li><strong>Refine o prompt</strong> — o que precisa ajustar em Contexto, Tarefa, Formato ou Limitações?</li>
-        <li><strong>Rode de novo</strong> — melhor?</li>
+        <li><strong>Baixe as 2 versões do Arquivo 1</strong> — botões acima, no bloco do Caso 1.</li>
+        <li><strong>Copie o prompt do Caso 1</strong> (botão "Copiar prompt" no bloco acima).</li>
+        <li><strong>Rode primeiro no arquivo LIMPO</strong> — anexe no ChatGPT/Claude/Gemini, cole o prompt, veja o output.</li>
+        <li><strong>Depois rode no arquivo COM ANOMALIAS</strong> — mesmo prompt, arquivo diferente.</li>
+        <li><strong>Compare os dois outputs</strong> — a IA achou as 3 anomalias? Como ela avisou você? Onde ela falhou?</li>
         <li><strong>Compartilhem</strong> — 2 duplas apresentam em 30s cada.</li>
       </ol>
 
       <div class="callout">
-        <p><strong>Meta:</strong> sair deste bloco com <strong>1 análise executiva
-        pronta</strong> baseada em dados reais, feita em 10 minutos, que você
-        já pode adaptar para levar amanhã para reunião.</p>
+        <p><strong>Meta:</strong> sair deste bloco com uma <strong>análise executiva
+        pronta</strong> baseada em dados fictícios da MC — feita em 10 minutos —
+        e com a experiência de ter visto <strong>a mesma IA acertando e falhando</strong>
+        dependendo da qualidade do dado. Isso é o insight mais importante do módulo.</p>
       </div>
     </div>
   </section>
